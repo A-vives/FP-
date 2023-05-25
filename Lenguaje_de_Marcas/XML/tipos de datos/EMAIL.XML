@@ -1,0 +1,7 @@
+<xs:simpleType name="E-mail">
+    <xs:restriction base="xs:string">
+        <xs:pattern value="(\w|\d|\.|\-|\_)+@((\d|\w)+\.)*(\.)*(\w|\d))"/>
+        
+        <xs:restriction value="((\w|\d)+\.)*(\w|\d)+@((\w|\d)+\.)*(\w|\d)+" ></xs:restriction>
+    </xs:restriction>
+</xs:simpleType>

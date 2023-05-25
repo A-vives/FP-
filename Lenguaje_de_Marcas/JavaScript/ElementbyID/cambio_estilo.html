@@ -1,0 +1,26 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Exemple</title>
+</head>
+<body>
+<h3 class="canvi">Títol h3 de la pàgina amb la classe anomenada "canvi"</h3>
+<p> Paràgraf de la pàgina sense classe.</p>
+<p class="canvi">Paràgraf de la pàgina amb la classe anomenada "canvi"</p>
+<button type=button onclick="classes()"> clica aquí</button>
+<script>
+    /*
+    Esta funcion no se ejecuta hasta que se llama con el evento "onclick" 
+    */
+function classes() {
+var classe=document.getElementsByClassName('canvi');
+for (i = 0; i < classe.length; i++){
+classe[i].style.color = "orange";
+classe[i].style.fontSize = "25px";
+classe[i].style.backgroundColor = "yellow";
+classe[i].style.borderStyle = "solid";
+}
+}
+</script>
+</body>
+</html>

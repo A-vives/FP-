@@ -1,0 +1,6 @@
+<xs:simpleType name="DocumentoNacional">
+    <xs:restriction name="DNI" base="xs:string">
+        <xs:pattern value="(\d{8}[A-Z] | [X-Z]\d{7}[A-Z])"/>    <!--Evaluamos el string entero -->
+        <xs:pattern value="(\d|[X-Z])\d{7}[A-Z]" />             <!-- Evaluamos la diferencia (mas eficiente)-->
+    </xs:restriction>
+</xs:simpleType>

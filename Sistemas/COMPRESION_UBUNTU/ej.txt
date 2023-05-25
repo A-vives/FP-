@@ -1,0 +1,23 @@
+ACTIVIDAD1.
+
+Dados los comandos de compresión y empaquetado gzip y tar, realiza las siguientes tareas:
+Comprimir un archivo disponible con un tamaño importante. Comparar los tamaños antes después de la compresión.
+
+Archivar y comprimir los archivos del directorio actual (y subdirectorios).
+
+Extraer y descomprimir el archivo prueba,tgz:
+
+Listar el contenido del archivo creado en el punto 1:
+
+Activitat 2. 
+Es pretén realitzar una còpia de seguretat en un sistema Linux que
+compleixi les condicions següents:
+
+ Còpia total (nivell 0) de tots els arxius d’usuari del sistema (directori /home).
+La còpia de seguretat s’anomenarà CopiaHome, estarà comprimida i es guardarà
+provisionalment al directori /var.
+
+Es farà servir la utilitat d’empaquetat tar.
+
+Mitjançant la configuració del dimoni cron amb la utilitat crontab es programarà que
+aquesta còpia es faci automàticament tots els divendres a mitjanit.

@@ -1,0 +1,73 @@
+html body{
+    padding: 0%;
+    margin: 0%;
+}
+#reloj {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: #888;
+  }
+  #numeros {
+    display: flex;
+    justify-self: center;
+    align-self: auto;
+    
+    padding: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    background-color: #9ab;
+
+  }
+  #digitos {
+    display: flex;
+    margin: auto;
+    font-family: fantasy;
+    font-size: 50;
+  }
+  #fecha {
+    display: flex;
+    background-color: aqua;
+
+  }
+  .capreloj2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5em;
+    color: white;
+    background-color: black;
+  }
+  
+  .puntos {
+    margin: 0 0.3em;
+  }
+  
+  img {
+    height: 1em;
+  }
+
+  .casio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .dcasio {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 48px;
+    font-family: Arial, sans-serif;
+    color: white;
+    text-shadow: 0px 0px 5px black;
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  

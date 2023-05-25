@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <link href="style.css" rel="stylesheet" type="css/css">
+
+    <title>Actividad 1</title>
+</head>
+<body>
+    <div class="botone">
+    <button onclick="mayor4()">click aqui</button>
+    </div>   
+        <script>
+        function mayor4 () {
+            var num1 = prompt ("Escribe un numero");
+            var num2 = prompt ("Escribe un numero");
+            var num3 = prompt ("Escribe un numero");
+            var num4 = prompt ("Escribe un numero");
+       
+            let mayor = Math.max(parseFloat(num1), parseFloat(num2), parseFloat(num3), parseFloat(num4));
+                                      console.log("El mayor de los cuarto numeros es: " + mayor);
+        }
+    </script>
+</body>
+</html>

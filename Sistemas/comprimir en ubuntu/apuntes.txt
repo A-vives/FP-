@@ -1,0 +1,12 @@
+tar cvzf archivo.tgz *
+
+tar xvzf archivo.tgz
+	x: Extrae archivo tar.
+	v: muestra la descripcion detallada del proceso
+	z: Representa la compresión gzip
+	f: Utiliza el archivo como tar
+tar tvzf archivo.tgz
+    t: lista el contenido del archivo tar
+    v: muestra la descripcion detallada del proceso
+    z:Representa la compresion gzip
+    f: utiliza el archivo tar

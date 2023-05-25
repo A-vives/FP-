@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE seat SYSTEM "c_data.dtd">
+<seat>
+    <clientes>
+        <cliente id="C01" nombre="Alejandro" apellido="Vives" direccion="av.cojo,1" tlf="+34666776655"/>
+        <cliente id="C02" nombre="Andres" apellido="Puertas" direccion="av.cojo,5" tlf="+34666776855"/>
+        <cliente id="C03" nombre="Pedro" apellido="Navaja" direccion="av.cojo,9" tlf="+34666776658"/>
+    </clientes>
+    <venta id_cliente="C01" matricula="0013-HXS"/>
+    <coches>
+        <coche id="N03" matricula="0010-HXS" modelo="Formentor" marca="SEAT" color="Blanco" />
+        <coche id="N02" matricula="0012-HXS" modelo="Leon" marca="SEAT" color="Blanco" />
+        <coche km="100000" matricula="0013-HXS" modelo="Ibiza" marca="SEAT" color="Blanco" />
+        <coche km="23000" matricula="0014-HXS" modelo="Cupra" marca="SEAT" color="Blanco" />
+        <coche km="50000" matricula="0015-HXS" modelo="Altea" marca="SEAT" color="Blanco" />
+    </coches>
+    <taller>
+        <mecanicos>
+            <mecanico id="M01" nombre="Marcos" apellido="Martin" contrato="26/04/2022" mobil="+34652256968" salario="1500" />
+            <mecanico id="M02" nombre="Pedro" apellido="Hernandez" contrato="15/06/1998" mobil="+34635684215" salario="1500" />
+            <mecanico id="M03" nombre="Sergi" apellido="Mendez" contrato="10/09/2000" mobil="+34632225252" salario="1500" />
+            <mecanico id="M04" nombre="Hector" apellido="Martorell" contrato="04/03/09" mobil="+34711565859" salario="1500" />
+        </mecanicos>
+        <reparaciones>
+            <reparacion matricula="0014-HXS" fecha="12/06/2017" horas="6"  id_mec="M01"/>
+            <reparacion matricula="0015-HXS" fecha="12/06/2017" horas="7"  id_mec="M02"/>
+            <reparacion matricula="0016-HXS" fecha="12/06/2017" horas="3"  id_mec="M01" id_mec2="M03"/>
+        </reparaciones>
+    </taller>
+</seat>

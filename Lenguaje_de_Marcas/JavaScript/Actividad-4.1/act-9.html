@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Actividad 9</title>
+</head>
+<header>
+  <style>
+     .pie {
+        font-size: 8px;
+        color: red;
+      }
+
+      .pie2 {
+        font-size: 40px;
+        color: #888;
+        font-weight: bold;
+      }
+  </style>
+    
+  </header>
+
+  <body>
+    <form>
+      <label for="texto1">Introduce un texto:</label>
+      <input type="text" id="texto1" name="texto1"><br><br>
+
+      <label for="texto2">Introduce un texto:</label>
+      <input type="text" id="texto2" name="texto2"><br><br>
+
+      <input type="button" value="Concatenar" onclick="Cadenesdetexto()">
+    </form>
+
+    <script>
+     function Cadenesdetexto() {
+        var texto1 = document.getElementById("texto1").value;
+        var texto2 = document.getElementById("texto2").value;
+        var resultat = texto1 + texto2;
+
+        var pie = document.getElementById("pie");
+        pie.innerHTML = resultat;
+
+        pie.classList.add("pie2");
+      }
+
+    </script>
+  </body>
+  <footer class="pie" id="pie">
+    footer de la pàgina web.
+  </footer>
+</html>

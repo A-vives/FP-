@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Actividad 4</title>
+</head>
+<body>
+    <div class="botone">
+           <button onclick="eliminarP()">click aqui</button>
+    </div>
+
+    <h3 id="titulo"> Lorem ipsum</h3>
+    <p id="parrafo">dolor sit amet consectetur adipisicing elit. Enim eius pariatur magnam
+    maxime laboriosam eligendi aliquam, explicabo, ipsa, molestiae cupiditate beatae possimus
+    nulla provident amet. Pariatur delectus nemo quaerat veritatis.
+    <br><br>
+    dolor sit amet consectetur adipisicing elit. Enim eius pariatur magnam
+    maxime laboriosam eligendi aliquam, explicabo, ipsa, molestiae cupiditate beatae possimus
+    nulla provident amet. Pariatur delectus nemo quaerat veritatis.</p>
+    <h3 id="titulo"> Lorem ipsum</h3>
+    <p id="parrafo">dolor sit amet consectetur adipisicing elit. Enim eius pariatur magnam
+    maxime laboriosam eligendi aliquam, explicabo, ipsa, molestiae cupiditate beatae possimus
+    nulla provident amet. Pariatur delectus nemo quaerat veritatis.
+    </p>
+            
+                <h3 id="titulo"> Lorem ipsum</h3>
+                <p id="parrafo">dolor sit amet consectetur adipisicing elit. Enim eius pariatur magnam
+                maxime laboriosam eligendi aliquam, explicabo, ipsa, molestiae cupiditate beatae possimus
+                nulla provident amet. Pariatur delectus nemo quaerat veritatis.
+                <br><br>
+                dolor sit amet consectetur adipisicing elit. Enim eius pariatur magnam
+                maxime laboriosam eligendi aliquam, explicabo, ipsa, molestiae cupiditate beatae possimus
+                nulla provident amet. Pariatur delectus nemo quaerat veritatis.</p>
+                <h3 id="titulo"> Lorem ipsum</h3>
+                <p id="parrafo">dolor sit amet consectetur adipisicing elit. Enim eius pariatur magnam
+                </p>
+                <div id="act4">
+                    <p>Primer hijo</p>
+                    <p>segundo hijo</p>
+                    <p>tercer hijo</p>
+                </div>
+    <script>
+    function eliminarP() {
+    var cont = document.getElementById('act4');
+    cont.removeChild(cont.firstChild);
+    }
+    </script>
+</body>
+</html>

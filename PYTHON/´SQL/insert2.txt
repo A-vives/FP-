@@ -1,0 +1,3 @@
+insert delete... con returning, nos devuelve 
+
+CURSOR

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<persona dni="123456789-L" xsi:noNamespaseSchemaLocation="persona.xsd"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <nombre>Juan Antonio</nombre>
+            <apellido>Abascal</apellido>
+            <estadoCivil>Soltero</estadoCivil>
+            <edad>60</edad>
+            <enActivo/>
+</persona>

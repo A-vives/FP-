@@ -1,0 +1,86 @@
+XSL (lenguaje de hojas de estilo extensible):
+    Transformacion: Convierte ficheros en otro formato
+
+
+XPath: Lenguaje para seleccionar o navegar entre nodos en el lenguaje XML de un DOM
+XSL-FO: F0 de formateo de objetos Tranformaciones para confrertir XML en HTML o PDF
+XSLT: Lenguaje de transformacion basado en hojas de estilo
+
+Hojas de estilo de documentos XML
+
+    XML
+        Componentes XLS: Nos permite seleccionar que queremos modificar en el arbol
+            Xpath, XSLT, XLS:FO
+
+Tecnicas de transformacion:
+    con <xsl:for-each select="TIENDA/RAQUETA">
+        seleccionaremos cada uno que sean hijos de TIENDA
+        
+    <xsl:value-of select="PRECIO"/>
+        El valor de select que coincida con PRECIO del for-each anterior
+
+IF
+    xsl:if
+
+ATRIBUTOS
+    Obtener el atributo de un elemento de XML 
+
+    <xsl:template match="licencia">
+        <p><img>
+        <xsl:attribute name="src">
+            <xsl:value-of select="imagen" />
+        <xsl:attibute>
+        </img>
+        </p>
+    <xsl:template>
+
+<fichas>
+  <persona id="14">
+    <nom>Tomas</nom>
+  </persona>
+ <persona id="23">
+    <nom nif="123456789-B">Pep</nom>
+    <vehicle>Seat</vehicle>
+ </persona>
+  <vehicle>Toyota</vehicle>
+</fichas>
+
+Xpath:
+        -Lenguaje de descripcion de rutas para documentos XML
+        -Nos permite seleccionar los NODOS del documenro XML
+        -Evaluacion de expresiones, su resultado puede ser boleano numericas y grupo de elementos
+        -XSLT se sirve de Xpath para la transformacion de documentos
+    Selecciona nodos en concreto
+        /fichas/persona - Esto nos dara todos los nodos (persona)
+        /fichas/persona[ 1 | first()] - Solo nos devuelve el primer nodo de "persona" que encuentra
+                        alst() - Nos devuelve el ultimo nodo "persona"
+                        nom="Tomas" - Nos devolverá el resultado de la condicion nom que ha de ser igual a Tomas
+        /fichas/persona[last() and nom="Tomas"]
+                                or
+                                not
+        a/b - B el hijo
+        a//b - Si a es descendiente de a lo cogerá
+        //nom - Qualquier elemento que se llame nom que aparezca en el arbol
+        fichas//vehicle - Todos los vehiculos que sea antecesor de fichas
+    ATRIBUTOS
+        para indicar con "@"
+        /fichas/persona[@id="23"] - Personas hijas de fichas con atributo id 23
+                        (<,>...)
+        /fichas/persona[@id] - Todas las personas que tengan un atributo id
+        /fichas/persona/@id - Seleccionamos todos los valores del atributo id
+        /fichas/persona[1]/@id - Valor de los atributos id solo de la primera persona hija de fichas
+        /fichas/persona[position() < 2]/@id - Valor de los atributos id del rango de position().
+    
+    * - todos los nodos
+        /fichas/* - Todos los nodos hijos de fichas
+
+        //vehiculo - todos los vehiculos
+        //vehicle/.. - Todos los padres de vehiculos <persona id="23">..</persona> y <fichas>..</fichas>
+        //vehicle/../@id - Valor de id de los padres de vehiculo
+
+    Funciones
+        7.8 de los apuntes
+            //nom
+            sum(//persona/@id) - suma de todos los id de persona
+            (//persona/@id)
+            

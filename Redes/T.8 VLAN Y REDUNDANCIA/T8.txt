@@ -1,0 +1,49 @@
+Planificacion y ADMINISTRACION de redes
+    VLAN y Redundancia
+Redes VLAN
+    Se basan en conexiones LOGICAS y no fisicas
+        Para evitar trafico de ARP de diferentes sectores
+        crea DOMINIO de difusion
+        Muejoran el rendimiento de la red porque meditaba los paquetes de difusion
+            la comunicacion de descubrimiento de vecinos, no interesa de otro departamento asi quedan en el dominio de difusion
+            el cual sera uno propio por departamento
+    
+    Como conectamos las VLAN
+        TRUNK: conexiones troncales, podemos enviar datos entre VLAN
+        El encabezado de la trama ethernet estandar no tiene informacion de las VLAN
+            Entonces añadimos 4 bit de la etiqueta de la VLAN
+        
+Routing VLAN
+    Las Vlan se utilizan àra segmentar redes de switch de capa 
+        Los Host de la Vlan no pueden comunicarse entre Vlan
+            Metodo 1
+                Coge el router y switch, para cada Vlan teniamos una conexion fisica entre Vlan
+            Metodo 2+
+            En un switch de capa3 
+                Ventajas: mas veloz
+                no requiere conexiones fisicas entre Vlan
+Redundancia 
+
+    STP 
+        Redundancia mientras crea una topologia de capa2 sin bucles
+            Prevencion de bucles, busca otra ruta alternativa si se cae una conexion en un router
+
+    EtherChannel
+        Tecnologia de agregacion de enlaces
+            se basa en varios enlaces fisicos volverlos uno logico
+        Protocolos de primer salto (FHRP)
+        Mecanismo que
+            En el caso que tengamos Redundancia 
+                Si la puerta de enlace del PC1 es R1, Si se cae, los elementos configurados en PC1 pierden conexion 
+            Tendremos 2 routers que funcionan como 1 (routers virtruales)
+                En este caso R2 estaria esperando a que R1 se caiga para entrar en accion el R2
+            Los routers virtuales tienen que estar copnfigurados para estos
+            
+11 13 15
+    9 PREGUNTAS ipV6
+    1 PREGUNTA DE COSAS PEQUEÑAS DEL TEMARIO DE ipV6
+        EUI64, SUBREDES, 
+    11 RESTANTES
+        7 capa de transporte
+        4 capa aplicacion
+    

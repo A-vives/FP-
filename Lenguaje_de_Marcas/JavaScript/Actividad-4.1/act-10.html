@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Actividad 10</title>
+</head>
+<header>
+  <style>
+
+  </style>
+    
+  </header>
+
+  <body>
+ <form>
+  <label for="nom">Nom de l'alumne:</label>
+  <input type="text" id="nom" name="nom"><br><br>
+
+  <label for="nota1">Nota primera avaluació:</label>
+  <input type="text" id="nota1" name="nota1"><br><br>
+
+  <label for="nota2">Nota segona avaluació:</label>
+  <input type="text" id="nota2" name="nota2"><br><br>
+
+  <label for="nota3">Nota tercera avaluació:</label>
+  <input type="text" id="nota3" name="nota3"><br><br>
+
+  <input type="button" value="Calcular nota" onclick="calcularNota()">
+</form>
+
+    <script>
+    function calcularNota() {
+  var nom = document.getElementById("nom").value;
+  var nota1 = parseFloat(document.getElementById("nota1").value);
+  var nota2 = parseFloat(document.getElementById("nota2").value);
+  var nota3 = parseFloat(document.getElementById("nota3").value);
+
+  var notaFinal = (nota1 + nota2 + nota3) / 3;
+  
+  alert("La nota final de " + nom + " és " + Math.round(notaFinal));
+}
+    </script>
+  </body>
+  
+</html>

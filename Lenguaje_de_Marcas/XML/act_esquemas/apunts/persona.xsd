@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <!-- DECLARACION DE ELEMENTOS-->
+    <xs:element name="persona">
+        <xs:complexType>
+            <xs:sequence>   
+                <xs:element name="nombre" type="xs:string" />   
+                <xs:element name="apellido" type="xs:string" />   
+                <xs:element name="estadoCivil" type="TipoEstadoCivil"
+                                default="Soltero" />   
+                <xs:element name="edad" type="TipoEdadHumana" />   
+                <xs:element name="enActivo" minOccurs="0">
+                    <xs:complexType/> <!-- CUANDO AQUI ESTA VACIO COMPLEXTYPE SIGNIFICA QIE NO TIENE QUE TENER CONTENIDO ESE ELEMENTO-->
+                </xs:element>
+            </xs:sequence>
+                <xs:attribute name="dni" type="TipoDni" use="required" />
+        </xs:complexType>
+    </xs:element>
+
+    <!-- DEFINICION DE TIPOS-->
+    <xs:simpleType name="TipoDni">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{8}/-[A-Z]"></xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="TipoEstadoCivil">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Soltero"/>
+            <xs:enumeration value="Divorciado"/>
+            <xs:enumeration value="Casado"/>
+            <xs:enumeration value="Viudo"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TipoEdadHumana">
+        <xs:restriction base="xs:nonNegativeInteger">
+            <xs:maxInclusive value="150"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

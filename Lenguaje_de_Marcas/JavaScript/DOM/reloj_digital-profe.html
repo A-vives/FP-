@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Reloj digital con imágenes</title>
+    <style>
+      .clock {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100px;
+        height: 100px;
+        font-size: 80px;
+        font-family: monospace;
+        color: white;
+        background-color: 888;
+        position: relative;
+      }
+      .dig,img {
+        width: 50px;
+        height: 80px;
+      }
+      .dot,img {
+        width: 30px;
+        height: 80px;
+      }
+      .mil,img {
+        width: 15px;
+        height: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="clock">
+      <img id= "1" class="dig" src="img/0.png">
+      <img id= "2" class="dig" src="img/0.png">
+
+      <img class="dot" src="img/dot.png">
+
+      <img id= "3" class="dig" src="img/0.png">
+      <img id= "4" class="dig" src="img/0.png">
+
+      <img class="dot" src="img/dot.png">
+      
+      <img id= "5" class="dig" src="img/0.png">
+      <img id= "6" class="dig" src="img/0.png">
+    
+      <img class="dot" src="img/dot.png">
+      
+      <img id= "7" class="mil" src="img/0.png">
+      <img id= "8" class="mil" src="img/0.png">
+    </section>
+    <script>
+      function mostrarHora() {
+        let d= new Date();
+        let h= d.getHours();
+        let m= d.getMinutes();
+        let s= d.getSeconds();
+        let ms= d.getMilliseconds();
+
+        let i1= Math.floor(h/10);
+        let i2= h%10;
+
+        let i3= Math.floor(m/10);
+        let i4= m%10;
+
+        let i5= Math.floor(s/10);
+        let i6= s%10;
+
+        let i7= Math.floor((ms%100)/10);
+        let i8= ms%10;
+
+        document.getElementById("1").src= "img/"+i1+".png";
+        document.getElementById("2").src= "img/"+i2+".png";
+
+        document.getElementById("3").src= "img/"+i3+".png";
+        document.getElementById("4").src= "img/"+i4+".png";
+
+        document.getElementById("5").src= "img/"+i5+".png";
+        document.getElementById("6").src= "img/"+i6+".png";
+
+        document.getElementById("7").src= "img/"+i7+".png";
+        document.getElementById("8").src= "img/"+i8+".png";
+      }
+      setInterval(mostrarHora, 43);
+    </script>
+  </body>
+</html>

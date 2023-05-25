@@ -1,0 +1,8 @@
+<xs:simpleType name="Pagos">
+    <xs:restriction base="xs:string">
+        <xs:enumeration value="Visa"/>
+        <xs:enumeration value="MasterCard"/>
+        <xs:enumeration value="American Express"/>
+        <xs:enumeration value="Efectivo"/>
+    </xs:restriction>
+</xs:simpleType>

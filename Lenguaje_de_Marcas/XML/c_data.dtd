@@ -1,0 +1,42 @@
+<!ELEMENT seat (clientes, venta, coches, taller)>
+<!ELEMENT clientes (cliente+)>
+<!ELEMENT cliente EMPTY>
+<!ATTLIST cliente
+    id ID #REQUIRED
+    nombre CDATA #REQUIRED
+    apellido CDATA #REQUIRED
+    direccion CDATA #REQUIRED
+    tlf CDATA #REQUIRED>
+<!ELEMENT venta EMPTY>
+<!ATTLIST venta
+    id_cliente IDREF #IMPLIED
+    matricula CDATA #IMPLIED>
+<!ELEMENT coches (coche+)>
+<!ELEMENT coche EMPTY>
+<!ATTLIST coche
+    id ID #IMPLIED
+    km CDATA #IMPLIED
+    matricula CDATA #REQUIRED
+    modelo CDATA #REQUIRED
+    marca CDATA #REQUIRED
+    color CDATA #REQUIRED>
+<!ELEMENT taller (mecanicos, reparaciones)>
+<!ELEMENT mecanicos (mecanico+)>
+<!ELEMENT mecanico EMPTY>
+<!ATTLIST mecanico
+    id ID #REQUIRED
+    nombre CDATA #REQUIRED
+    apellido CDATA #REQUIRED
+    contrato CDATA #REQUIRED
+    mobil CDATA #REQUIRED
+    salario CDATA #REQUIRED>
+<!ELEMENT reparaciones (reparacion+)>
+<!ELEMENT reparacion (mecanico+)>
+<!ATTLIST reparacion
+    matricula CDATA #REQUIRED
+    fecha CDATA #REQUIRED
+    horas CDATA #REQUIRED
+    id_mec CDATA #REQUIRED
+    id_mec2 CDATA #IMPLIED
+    id_mec3 CDATA #IMPLIED
+    id_mec4 CDATA #IMPLIED>

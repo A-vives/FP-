@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Reloj digital con imágenes</title>
+    <style>
+      .clock {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        font-size: 80px;
+        font-family: monospace;
+        color: white;
+        background-color: black;
+      }
+      img {
+        width: 50px;
+        height: 80px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="clock">
+      <span id="horas"></span>
+      <img src="img/dos_puntos.png" alt=":" />
+      <span id="minutos"></span>
+      <img src="img/dos_puntos.png" alt=":" />
+      <span id="segundos"></span>
+    </div>
+    <script>
+      function mostrarHora() {
+        var fecha = new Date();
+        var horas = fecha.getHours();
+        var minutos = fecha.getMinutes();
+        var segundos = fecha.getSeconds();
+        var horaCompleta = [
+          obtenerImagen(horas.toString().padStart(2, "0").charAt(0)),
+          obtenerImagen(horas.toString().padStart(2, "0").charAt(1)),
+          obtenerImagen("dos_puntos.png"),
+          obtenerImagen(minutos.toString().padStart(2, "0").charAt(0)),
+          obtenerImagen(minutos.toString().padStart(2, "0").charAt(1)),
+          obtenerImagen("dos_puntos.png"),
+          obtenerImagen(segundos.toString().padStart(2, "0").charAt(0)),
+          obtenerImagen(segundos.toString().padStart(2, "0").charAt(1))
+        ];
+        return horaCompleta;
+      }
+
+      function obtenerImagen(digito) {
+        var rutaImagen = "img/" + digito;
+        return '<img src="' + rutaImagen + '.png">';
+      }
+
+      setInterval(function() {
+        var horaActual = mostrarHora();
+        document.getElementById("horas").innerHTML = horaActual[0] + horaActual[1];
+        document.getElementById("minutos").innerHTML = horaActual[3] + horaActual[4];
+        document.getElementById("segundos").innerHTML = horaActual[6] + horaActual[7];
+      }, 1000);
+    </script>
+  </body>
+</html>

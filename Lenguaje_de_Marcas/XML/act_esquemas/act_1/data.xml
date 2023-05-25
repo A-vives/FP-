@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<fichas xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="squema.xsd">
+    <persona>
+        <nombre>Oliver Queen</nombre>
+        <edad>55</edad>
+    </persona>
+
+    <persona>
+        <nombre>Kevin Bacon</nombre>
+        <edad>52</edad>
+    </persona>
+
+    <persona>
+        <nombre>Rocket el mapache</nombre>
+        <edad>5</edad>
+    </persona>
+</fichas>

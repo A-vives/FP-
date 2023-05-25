@@ -1,0 +1,20 @@
+<students>
+	<student>
+		<id>1234567</id>
+		<name>Anna Smith</name>
+		<date_of_birth>23/12/2000</date_of_birth>
+		<email>annasmith@noemail.org</email>
+	</student>
+	<student>
+		<id>1234568</id>
+		<name>John Moore</name>
+		<date_of_birth>13/07/2001</date_of_birth>
+		<email>jmoore@noemail.org</email>
+	</student>
+	<student>
+		<id>1234569</id>
+		<name>Julia Romney</name>
+		<date_of_birth>21/11/2001</date_of_birth>
+		<email>juliar@noemail.org</email>
+	</student>
+</students>

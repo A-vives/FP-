@@ -1,0 +1,126 @@
+Para Revisar la ACL en la configuracion:
+*** R1# show run | section access-list ***
+    (nos muestra remark y permit)
+
+Para ver que ACL estan aplicadas en una interfaz
+*** R1# show ip int Serial 0/1/0 | include access list ***
+
+
+Para crear una ACL se usa la siguiente sintaxis:
+        ***Router(config)#
+    Router(config)# access-list access-list-number {deny | permit | remark text} source [source-wildcard] [log]
+    donde: 
+        access-list-number
+                Este es el número decimal de la ACL.
+                El rango de números ACL estándar es de 1 a 99 o 1300 a 1999.
+        deny
+            Esto DENIEGA el acceso si la condicion COINCIDE
+        permit
+            Esto PERMITE el acceso si la condicion COINCIDE
+        remark "text"
+            (OPCIONAL)Agrega una entrada de texto para documentacion
+            Permite 100 caracteres
+        source
+            Identifica la red origen o la direccion de host que se va a filtrar
+            any: todas las redes
+            host ip-address | sin "host" solo IP especifica
+        source-wildcard 
+            (OPCIONAL) Mascara de wildcard de 32bit para aplicar al origen 0.0.0.0 predeterminada
+        log
+            (OPCIONAL) Palabra clave que genera y envia un mensage informativo cada vez que coincide ACE
+            El mensage incluye el numero de ACL concicion coincidente, permitido/denegado, direccion origen y numero de paquetes
+            Este mensaje se genera para el primer paqute coincidente
+            Esta palabra clave solo debe implementare para solucionar problemas o seguridad
+        
+        *** Router(config)# ip access-list standard access-list-name ***
+            Este comando nos entra en la configuracion de las ACE del ACL
+        *** no access-list standard access-list-name ***
+            Con este ELIMINAMOS la acl con el nombre correspondiente
+
+
+---------------ACL ESTANDAR PARA IPv4-------------------------------
+
+***Router(config-if) # ip access-group {access-list-number | access-list-name} {in | out}***
+
+Aplicamos las directivas del ACL 10 de salida en la interefaz Serial 0/1/0
+        R1(config)# interface Serial 0/1/0
+        R1(config-if)# ip access-group 10 out
+        R1(config-if)# end
+
+
+----------------ACL ESTANDAR PARA IPv4 NUMERADA-------------------
+
+    Para pwermitir que SOLO PC1 salga a internet
+        R1(config)# access-list 10 remark ACE permits ONLY host 192.168.10.10 to the internet
+        R1(config)# access-list 10 permit host 192.168.10.10
+        R1(config)# do show access-lists
+            Standard IP access list 10
+        10 permit 192.168.10.10
+
+    Directiva que permite a los host de LAN 2 permitidos a internet
+        R1(config)# access-list 10 remark ACE permits all host in LAN 2
+        R1(config)# access-list 10 permit 192.168.20.0 0.0.0.255
+        R1(config)# do show access-lists
+        Standard IP access list 10
+            10 permit 192.168.10.10
+            20 permit 192.168.20.0, wildcard bits 0.0.0.255
+
+    Aplicamos las directivas del ACL 10 de salida en la interefaz Serial 0/1/0
+        R1(config)# interface Serial 0/1/0
+        R1(config-if)# ip access-group 10 out
+        R1(config-if)# end
+
+            Con estas politicas sólo permitirá al host 192.168.10.10 
+            y a los host de la LAN 2 salir de la interfaz Serial 0/1/0
+            Todos los demahs host de la 192.168.10 no tendran salida a internet
+
+
+                    deberia quedar asi:
+                    R1# show ip int Serial 0/1/0 | include access list
+                      Outgoing Common access list is not set
+                      Outgoing access list is 10
+                      Inbound Common access list is not set
+                      Inbound  access list is not set
+                    R1#
+
+------------------ACL ESTANDAR CON NOMBRE PARA IPv4------------------
+
+    Creamos una ACL con nombre "PERMIT-ACCESS"
+        R1(config)# ip access-list standard PERMIT-ACCESS
+        R1(config-std-nacl)# remark ACE permits host 192.168.10.10
+        R1(config-std-nacl)# permit host 192.168.10.10
+
+    
+    Y creamos la misma politica de antes (SOLO HOST 192.168.10.10 Y TODA LAN 2)
+        R1(config-std-nacl)# remark ACE permits host 192.168.10.10
+        R1(config-std-nacl)# permit host 192.168.10.10
+        R1(config-std-nacl)# remark ACE permits all hosts in LAN 2
+        R1(config-std-nacl)# permit 192.168.20.0 0.0.0.255
+        R1(config-std-nacl)# exit
+
+
+    Aplicamos la ACL a la interfaz pertinente
+        R1(config)# interface Serial 0/1/0
+        R1(config-if)# ip access-group PERMIT-ACCESS out
+        R1(config-if)# end
+
+    
+                DEBERIA QUEDAR ASI:
+                R1# show access-lists
+                Standard IP access list PERMIT-ACCESS
+                    10 permit 192.168.10.10
+                    20 permit 192.168.20.0, wildcard bits 0.0.0.255
+                R1# show run | section ip access-list
+                ip access-list standard PERMIT-ACCESS
+                 remark ACE permits host 192.168.10.10
+                 permit 192.168.10.10
+                 remark ACE permits all hosts in LAN 2
+                 permit 192.168.20.0 0.0.0.255
+                R1#
+
+                    R1# show ip int Serial 0/1/0 | include access list
+                      Outgoing Common access list is not set
+                      Outgoing access list is PERMIT-ACCESS
+                      Inbound Common access list is not set
+                      Inbound  access list is not set
+                    R1#

@@ -1,0 +1,16 @@
+<html>
+<body>
+<h1>Fes clic al botó i es crearà un botó</h1>
+<button onclick="funciocrearboto()">Fes click</button>
+<script>
+function funciocrearboto() {
+    
+var boto = document.createElement("button"); // Cream el boton.
+var cont = document.createTextNode("soy un boton"); // Texto para el nuevo boton
+boto.appendChild(cont); // .
+document.body.appendChild(boto); // Ponemos el boton en el documento
+
+}
+</script>
+</body>
+</html>

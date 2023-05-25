@@ -1,0 +1,34 @@
+<!ELEMENT NACEX (camioneros, provincias, camiones)>
+<!ELEMENT camioneros (camionero+, paquetes?)>
+    <!ELEMENT camionero (paquetes+)>
+        <!ATTLIST camionero id ID #REQUIRED>
+        <!ATTLIST camionero nombre CDATA #REQUIRED>
+        <!ATTLIST camionero cam_tlf CDATA #REQUIRED>
+        <!ATTLIST camionero cam_dir CDATA #REQUIRED>
+        <!ATTLIST camionero cam_sal CDATA #REQUIRED>
+        <!ATTLIST camionero ciudad CDATA #REQUIRED>
+    <!ELEMENT paquetes (paquete+)>
+    <!ELEMENT paquete (destinatario)>
+        <!ATTLIST paquete id ID #REQUIRED>
+        <!ATTLIST paquete codigo_provincia CDATA #REQUIRED>
+        <!ATTLIST paquete descripcion CDATA #REQUIRED>
+<!ELEMENT destinatario (#PCDATA)>
+    <!ATTLIST destinatario nombre CDATA #REQUIRED>
+    <!ATTLIST destinatario direccion_envio CDATA #REQUIRED>
+
+<!ELEMENT provincias (provincia+)>
+
+    <!ELEMENT provincia (#PCDATA)>
+        <!ATTLIST provincia codigo CDATA #REQUIRED>
+        <!ATTLIST provincia nombre CDATA #REQUIRED>
+
+<!ELEMENT camiones (camion+)>
+<!ELEMENT camion (conductores*)>
+    <!ATTLIST camion id ID #REQUIRED>
+    <!ATTLIST camion matricula CDATA #REQUIRED>
+    <!ATTLIST camion modelo CDATA #REQUIRED>
+    <!ATTLIST camion tipo CDATA #REQUIRED>
+    <!ATTLIST camion potencia CDATA #REQUIRED>
+<!ELEMENT conductores (conductor+)>
+<!ELEMENT conductor (#PCDATA)>
+    <!ATTLIST conductor id IDREF #REQUIRED>

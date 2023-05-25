@@ -1,0 +1,422 @@
+qué es XML? Extensible Markup Lenguage, metalenguaje
+Es el precedente de html, se trata de un formato de almacenamiento de informacion a base de etiquetas
+ej: En el campo de la quimica
+    tendremos etiquetas como <átomo>, <molécula> o <enlace>
+Con XML como es un lenguaje para guardar cosas y no para hacer paginas web
+ no es un lenguaje de programacion
+ no es un protocolo de comunicacion
+ no es un lenguaje de base de datos
+
+ No es mas que texto plano, va bien para almacenar informacion y mandarla
+ suelen ser ligeros
+
+ ESTRUCTURA en modo arbol
+tendremos una estructura tipo arbol, con hijos, hermanos...
+los nodos intermedios seran los que tienen hijoslos nodos de fin o holas serán los que no tienen hijos
+
+El hijo mayor será el que esté primero
+ ej: 
+<persona>
+    <nombre>María</nombre>
+    <apellido>González</apellido>
+</persona>
+Podemos representarlo en forma de arbol y/o en cajas
+
+NODOS 
+RAIZ: Será el principal no tiene ascendentes ni hermanos
+Elementos: Unidad basica de un documento XML, son delimitadores/contenedores de información
+
+Elementos sin contenido: siempre se cierran; < separador />
+
+Atributos: Permiten especificar datos adicionales de un Elementos
+Ejemplo: <distancia unidades="km">70</distancia>
+
+TEXTO: No todo el texto es valido para eso hay entidades
+ENTIDADES: Se usa para introducir texto no válido
+
+NO SE PUEDE USAR "<" COMO TEXTO
+
+Tabulador:          \t &#9;         TAB
+Nueva línea:        \n &#10;        LF
+Retomo de carro:    \r &#13;        CR
+Espacio:            \s &#32;        NO-BREAK SPACE
+
+Los espacios dobles o mas son condensados en uno y donde no hace falta serán ignorados
+
+INSTRUCCIONES DE PROCESAMIENTO: Son instrucciones para la herramnieta encargada de 
+                                ejecutar el XML
+ej: <?xml versi6n="1.O" encoding="UTF-8"?>
+
+Espacion de nombres: mecanismo diseñado para distinguir etiquetas cuando se mezclan distintos 
+vocabularios 
+ej: tener dos etiquetas con el mismo nombre que sean completamente diferente
+
+Etiquetas predefinidas
+
+&apm;   &
+&lt;    >
+&gt;    <
+&apos;  '
+&quot;  "
+
+SECIONES CDATA: Conjunto de texto que el procesador no debe analizar "como un comentario"
+
+DTD Definicion de Tipo de Documento: Ciertas reglas que fuerzan unas restricciones sobre 
+la estructura, es un documento aparte que define estas reglas
+
+
+-----------------------------2da edicion ------------------------------
+
+
+Reglas que se emplean para definir los nombres correctamente
+Que enpiece con una letra, da igual si lleva tilde, alfabeto no latino, subrayedo o dos puntos
+Los siguientes pueden ser digitos letrasm subrayados, guines bajos, comas y dos puntos
+Los que empiezan por las letras XML en cualquier combinacion, se reservan para estandarización
+NO PUEDEN CONTENER
+espacios
+otro caracter que no sean los citados como validos, incluye, comillas simpless y dobles,
+ dolar acento, signo de porcentage y punto y coma
+
+Uso de elementos frente a uso de astributos:
+
+    Los elemento;
+- Se emplean para representar jerarquías o contenido de unos dentro de otros.
+- Se pueden extender con otros elementos en su interior.
+- El orden en el que aparecen es representativo.
+- Pueden tener atributos.
+- Puede haber múltiples ocurrencias de un elemento.
+
+    - Los atributos;
+- Van asociados a los elementos.
+- Son modificadores de la información.
+- Se suelen usar para registrar metadatos.
+- El orden en que aparecen dentro del elemento al que van asociados no es
+representativo.
+- No se pueden extender con otros elementos contenidos en su interior.
+- No puede haber múltiples ocurrencias de un atributo dentro de un mismo
+elemento.
+
+ESPACIO DE NOMBRES
+grupo de nombres
+Mecanismo para evitar problemas ej atributos que tienen el mismo nombre pero son cosas distintas
+
+URL: direccion a un recurso web
+URI: Amplia mas las referencias, todas las URL son URI pero hay URI que no son URL
+    Identificador de uso global
+
+xmlns:emp="empresa:espacios:info"
+
+Nombres de espacios por defecto: Es aquel que no se define un prefijo, 
+
+--------------------3ER ACTO-----------------------------------
+
+ParserXML: Analizador de nml, procesador que lo analiza y determina su estructura viendo tambien los datos que 
+contiene
+
+1er: comprueba las reglas a ver si esta bien formateado mediante unas reglas, 
+tambien nos dira que sea valido para eso necesitamos una serie de reglas
+Hay paginas en linea que nos valida documentos XML xomo el software llamado XML PASATE EDITOR
+
+REGLAS:
+- El documento ha de comenzar con una instruccion de procesamiento xml
+    - <?xml version = "1.0"?>
+- Debe existir un elemento RAIZ para que sea el archivo xml
+- Los elementos vacios se tendran que cerrar automaticamente con />
+- Deben estar bien anidados abriendo y cerrando las etiquetas en pareja
+
+CORRECCION SINTATICA
+- Es sensible a las mayusculas y minusculas
+- los valores de los atributos deben estar entre comillas simples o dobles pero siempre la misma
+- no puede haber 2 atributos con el mismo nombre asociados a la misma etiquetas
+- No puede haber comentarios dentro de las etiquetas
+- No puede haber nada antes de la instruccion xml
+- No puede haber texto antes ni despues del elemento documento.
+- No pueden aparecer signos como "<" ni "&" en el texto de elementos y atributos
+    Para verificar que esta bien formado, hay que abrirlo con un navegador como mozilla firefox o internet explorer
+    Si se muestran los nodos es que esta bien formado
+NO es un lenguaje de progremacion; no existen compiladores de XML que generen ejecutables
+NO es un protocolo de comunicacion; no enviará datos por nosotros a traves de internet, 
+    P.comunucacion: HTTP, FTP...
+NO es un sistema gestor de bases de datos; Una base de datos puede contener archivos XML
+    existen bases de datos XML nativas que lo almacenan son documentos en formato XML
+No es propietario: no pertenece a ninguna compañia como otros 
+
+Nada se ha dicho que elementos o atributos concretos pueden aparecer en que orden y que valores toman
+Se dice que un xml valido si existen unas reglas de validacion asociadas a el (DTD)
+
+DTD: Descripcion de la estructura del xml, Con esto le podemos decir qué va a salir en el documento XML
+    Para declararlo hay que poner <!DOCTYPE>
+
+Ubicación: dónde se localizan las reglas del DTD.
+○ Interno: las reglas aparecen en el propio documento XML.
+    Dentro del mismo documento
+        <!DOCTYPE elemento_raiz [reglas]>
+
+○ Externo: las reglas aparecen en un archivo independiente.
+    Fuera del documento (como CSS)
+        <!DOCTYPE elemento_raiz SYSTEM URL>
+
+○ Mixto: mezcla de los anteriores, las reglas aparecen en ambos lugares. Las reglas internas tienen
+prioridad sobre las externas.
+    Dentro y fuera a la vez
+        <!DOCTYPE elemento_raiz SYSTEM URL [reglas]>
+
+● Carácter: si es un DTD para uso privado o público.
+○ o Para uso privado: se identifica por la palabra SYSTEM.
+    Solo lo usamos nosotros
+        <!DOCTYPE elemento_raiz PUBLIC FPI URL >
+
+○ o Para uso público: se identifica por la palabra PUBLIC. Debe ir acompañado del FPI (Formal Public
+Identifier - Identificador Público Formal), una etiqueta que identifica al DTD de manera
+"universal". 
+    Ponemos nuestro archivo dtd para que otras personas lo puedan usar
+        <!DOCTYPE elemento_raiz PUBLIC FPI URL [REGLAS]>
+
+ESTRUCTURA FPI
+Compuesto por 4 campos
+    Primero:
+        Si no se ha comprobado por una forma normal , escrito por nosotros, se escribe con "-"
+        Si ha sido comprobado por un organismo no oficial "+"
+        Si ha sido comprobado por un organismo oficial, directamente ponemos la referencia estandarización
+    Segundo:
+        Nombre del organismo responsable del estandar
+    Tercero:
+        Tipo documento que se escribe, suele incluir la version
+    Cuarto:
+        Idioma del DTD
+    
+    Ej: <!DOCTYPE planetas SYSTEM "planetas.dtd">
+    
+    <!DOCTYPE planetas SYSTEM "charlas.dtd" [
+        <!ELEMENT charlas (charla)+>
+        <!ELEMENT charla (nombre, lugar, despedida)+>
+        <!ENTITY despedidaInglesa "Thank you, good bye!">
+        <!ENTITY despedidaFrancesa "Merci, au revoi!">
+    ]>
+
+    <!ELEMENT nombre_elemento modelo_elemento> : 
+    Declaracion de tipo elemento indica la existencia de un elemento en el documento XML
+        ANY: Cualquier cosa, Se puede usar para construir el DTD dejar la descripcion como valida
+            en cualquier caso, es un comodin que no debe aparecer en el DTD definitivo
+        EMPTY: No puede tener nada
+        DATOS: Caracteres, textuales, numericos o cualquier otro formato que no contengan etiquetas
+            Se describe como #PCDATA Y debe aparecer en parentesis
+            EJ: <!ELEMENT titulo (#PCDATA)>
+        
+ELEMENTOS DESCENDIENTES
+Su descripcion debe aparecer entre parentesis y se basa en unas reglas
+    Cardinalidad de elementos: Indica el numero de veces que puede aparecer un elemento o una ausencia de ellos
+    Secuencias de elementos: En las secuencias se usan simbolos para indicar el orden que un elemento debe aparecer, o si aparece otra alternativa
+    Se pueden combinar los simbolos de Cardinalidad
+
+    ? - El elemento o ausencia del mismo puede aparecer 0 o 1 vez
+    * - El elemento o ausencia del mismo puede aparecer de 0 a N veces
+    + - El elemento o ausencia del mismo puede aparecer de 1 a N veces
+
+    A, B - El elemento B aparecerá a continuacion del elemento a
+    A | B - Aparecerá el A o el B pero nunca ambos,
+    
+---------------------------------4rta ronda-----------------------------20/03/23
+
+Elementos DTD: 
+
+Cuando declaramos mas de un elemento no podremos usar el "+"
+
+<!ATTLIST>
+Declaracion de tipo atributo de elementos. Indica la existencia de atributos de un elemento el el XML
+
+<!ATTLIST nombre_elemento
+nombre atributo tipo_atributo caracter
+nombre atributo tipo_atributo caracter
+... >
+
+IDREFS: Multiples id de otros elementos separados por espacios
+NMTOKEN: Cualquier nombre sin espacios en blanco en su interior y en los lados, se ignoran
+notation: Nombre de notacion.
+
+TIPOS DE DATOS
+--------------
+xs: prefijo de nombres de un 
+
+Todos los tipos de datos pueden ser del elemento
+
+  xs:restruction    base    id  
+  max inclusive     Contiene el valor maximo
+  min inclusive     Contiene el valor minimo
+
+  max exclusive     No contiene el valor minimo
+  min exclusive     No contiene el valir minimo
+
+  FractionDigits - Maximo decimales 
+  totalDigits - Numero exacto de digitos
+
+Patrones: 
+    Debe cumpli
+
+Patron      signo               Ej
+·       Cualquier caracter      ;
+\w      Cualquier letra         d
+\d      Cualquiera que no sea un digitos
+\D      Cualquier caracter NO digito
+\s      Cualquier espacio espaciado (espacios, tabulaciones)
+\S      Cualquier caracter no espaciado
+\d{n}   N digitos exactamente 
+\d{n,m} De n a M digitos
+\d{n,}  n o mas digitos
+[xyz]   Uno de los caracteres x, y, z
+[A-Z]   rango A z
+[âbc]   Negacion de un grupo de caracteres
+[F-J[H]] De la f a la j pero sin contener la H
+(a|b)   A ó B
+b?      Sucesion de 0 o una ocurrencias
+l*      Sucesion de 0 o mas ocurrencias en cadena
+(cd)+   Sucesion de 1 o mas ocurrencias de la cadena
+
+?       0 ó 1
+*       0 ó mas
++       1 ó mas
+{n}     n ocurrencias exactas
+{n,m}   de n a m ocurrencias
+{n,}    n o mas ocurrencias
+
+Tipos de datos 5.8.6 - XML2
+    Con union puedo hacer un tipo desde otros que ya existe 
+    Lista: tipo de datos compuestos por listas de un tipo de datos base
+        de la lista que debe aparecer separada por espacios
+        Contenido simple; <xs:simpleContent>: Este contenido solo tiene contenido con
+Modelos de contenido:
+    Secuencia, Elementos aparecen en fila, inos detras de otros en un orden determinado
+        <xs:sequence>
+        <xs:element name="emisor" type="xs:string"/>
+        <xs:element name="receptor" type="xs:string"/>
+        <xs:element name="contenido" type="xs:string"/>
+        </xs:sequence>
+Todos: 
+    Pueden aparecer en cualquier orden
+    xs:complexType
+        name: nombre del tipo, no esta permitido si no es hijo no es obligatorio
+        mixed: Indica si intercala contenido textuual con elementos DESCENDIENTES
+        id: Identificador
+        abstract
+        final: 
+Ejemplo
+    <xs:element type="persona">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="PrimerApellido" type="string" />
+                <xs:element name="SegundoApellido" type="string" />
+                <xs:element name="FechaNacimiento" type="date" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+Declaracion de elementos
+simple:
+    <xs:element>
+
+    </xs:element>
+Declaracion compleja para un elemento textarea:
+    <xs:element name="textarea">
+        <xs:ComplexType>
+
+        </xs:ComplexType>
+    </xs:element>
+Declaracion solo con atributos
+    <xs:element name="img">
+        <xs:complexType>
+        <xs:attribute name=""></xs:attribute> name=""
+        </xs:complexType>
+    
+    </xs:element>
+solo hijos:
+listas:
+    <xs:element>
+        <xs:ComplexType>
+            <xs:sequience>  <!-- tiene una secuencia (hijos)-->
+                <xs:element name="li" type="xs:string" maxOccurs="unbounded"/>
+            </xs:sequience>
+        </xs:ComplexType>
+    </xs:element>
+
+TABLAS:
+<xs:element>
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element ref="tr" maxOccurrs="unbounded"/>
+        </xs:sequence>
+        <xs:sequence name="border" type="xs:string" />
+    </xs:complexType>
+</xs:element>
+<xs:element name="tr">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element name="td" type="xs:string" />
+        </xs:sequence>
+    </xs:complexType>
+</xs:element>
+
+elementos con contenido contextual
+    En un elemento de tipo texto podemos tener ccurrencias como etiquetas, en un parrafo, hay cursivas etc...
+
+<xs:element>
+    <xs:complexType mixed="true"> <!-- INDICA SI SE INTERCALA TEXTO CON ELEMENTOS DESCENDIENTES -->
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="b" type="xs:string" />
+            <xs:element name="i" type="xs:string" />
+        </xs:choice>    
+    </xs:complexType>
+</xs:element>
+
+elementos con atributos, elementos descendientes y contenido textual
+    Ejemplo un formulario en html
+    
+    <xs:element name="form">
+        <xs:complexType mixed="">
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="input"/> <!-- referencia a un elemento ya definido-->
+            </xs:choice>
+            <xs:attribute name="name" type="xs:string"/>
+            <xs:attribute name="method" type="xs:string"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element>
+
+    </xs:element>
+
+EXTENSION DE UN TIPO COMPLEJO
+    erencia en programacion 
+
+<xs:complexType>
+    <xs:sequence>
+        <xs:element name="Apellido" type="xs:string" />
+        <xs:element name="Ciclo" type="xs:string" />
+    </xs:sequence>
+</xs:complexType>
+
+EXTENSION DEL TIPO COMPLEJO ANTERIOR
+
+<xs:complexType name="TipoAlumnoExtendido">
+    <xs:complexContent>
+        <xs:extension>
+            <xs:sequence>
+                <xs:element name="Curso" type="xs:positiveInteger" />
+            </xs:sequence>
+            <xs:attribute name="Matrícula" type="xs:positiveInteger" 
+                            use="required"/>
+        </xs:extension>
+    </xs:complexContent>
+</xs:complexType>
+
+MODELOS DE DISEÑO
+
+    Muñeca rusa: las declaraciones de los tipos se anidan unas a otras
+    Es dificil de leer cuando es grande
+
+    Diseño plano: Las declaraciones de los elementos y sus atributos se definen
+    en un solo sitio y se hacen referencias en el codigo
+    Esta tecnica recuerda a los DTD
+
+    Tipos con nombre reutilizables: Es parecido al diseño plano pero usamos los tipos
+    definidos en el propio documento REFECENCIA DE TYPE
+
+    

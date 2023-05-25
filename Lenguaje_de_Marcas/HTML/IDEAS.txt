@@ -1,0 +1,4 @@
+Idea para pagina web
+orientada:
+como será
+hacer gota en el menu que despliege todas las opciones pintando la barra de un color 

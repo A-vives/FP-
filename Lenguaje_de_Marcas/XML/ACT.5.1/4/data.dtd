@@ -1,0 +1,27 @@
+<!ELEMENT ticket (fecha, precio_total, pago, comercio, compra)>
+        <!ATTLIST ticket id ID #REQUIRED >
+    <!ELEMENT fecha (#PCDATA)>
+<!ELEMENT precio_total (precio_no_iva, IVA_tot, PVP_total)>
+    <!ELEMENT precio_no_iva (#PCDATA)>
+    <!ELEMENT IVA_tot (#PCDATA)>
+    <!ELEMENT PVP_total (#PCDATA)>
+        <!ATTLIST precio_total moneda NMTOKEN #REQUIRED>
+<!ELEMENT pago (tarjeta | efectivo)>
+    <!ELEMENT tarjeta (nombre)>
+        <!ATTLIST tarjeta tipo CDATA #REQUIRED>
+        <!ATTLIST tarjeta num  CDATA #REQUIRED>
+    <!ELEMENT nombre (#PCDATA)>
+    <!ELEMENT efectivo (#PCDATA)>
+        <!ELEMENT recibido (#PCDATA)>
+        <!ELEMENT cambio (#PCDATA)>
+<!ELEMENT comercio (nombre_comercio, direccion, CIF, telefono)>
+    <!ELEMENT nombre_comercio (#PCDATA)>
+    <!ELEMENT direccion (#PCDATA)>
+    <!ELEMENT CIF (#PCDATA)>
+    <!ELEMENT telefono (#PCDATA)>
+<!ELEMENT compra (nombre_compra, cantidad, precio_u_no_IVA, IVA, PVP)>
+    <!ELEMENT nombre_compra (#PCDATA)>
+    <!ELEMENT cantidad (#PCDATA)>
+    <!ELEMENT precio_u_no_IVA (#PCDATA)>
+    <!ELEMENT IVA (#PCDATA)>
+    <!ELEMENT PVP (#PCDATA)>

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mensaje SYSTEM "data.dtd">
+<mensaje>
+<email respuesta ="no">
+        <cabecera>
+            <emisor></emisor>
+            <receptor></receptor>
+            <fecha></fecha>
+        </cabecera>
+        <asunto></asunto>
+        <texto></texto>
+        <texto></texto>
+        <texto></texto>
+  </email>
+</mensaje>

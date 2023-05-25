@@ -1,0 +1,33 @@
+Particion de una base de datos
+create schema class10
+create schema class10 AUTHORITATION hohn;
+siempre se trabaja con public
+nombre completo : namedatabase.nameschema.nametable
+show search_path;
+\dn - listar schemas
+set search_path to $user, public, class01 # nos pone en la busqueda el esquema 
+
+grant usage on schema public to userpulpo;
+crear tabla con i e insertar valores por defecto
+grant select on table a to userpulpo; - darle permisos a userpulpo para hacer select
+
+
+
+CREATE TABLE sales.customers (
+       id integer NOT NULL, 
+       lastname text NOT NULL, 
+       firstname text NOT NULL, 
+       address text NOT NULL, 
+       zipcode integer NOT NULL, 
+       phonenumber text NOT NULL, 
+       recommended_id integer,
+       registerdate timestamp not null,
+       CONSTRAINT customers_pk PRIMARY KEY (id),
+       CONSTRAINT fk_customers_recommended_id FOREIGN KEY (recommended_id)
+            REFERENCES customers(id) ON DELETE SET NULL
+    );
+
+copy resources.facilities FROM '/var/log/postgresql/facilities.csv' WITH (DELIMITER ';',FORMAT CSV, HEADER true, null '', quote '''');
+copy sales.customers FROM '/var/log/postgresql/customers.csv' WITH (DELIMITER ';',FORMAT CSV, HEADER true, null '', quote "'");
+copy resources.bookings FROM '/var/log/postgresql/booking.csv' WITH (DELIMITER ';',FORMAT CSV, HEADER true, quote "'");
+

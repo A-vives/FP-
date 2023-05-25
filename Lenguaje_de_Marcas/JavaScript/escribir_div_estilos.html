@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <script>
+            function agregartxt2(){
+            var newt = document.createElement("div");
+            newt.style.cssText='border:8px solid #56aaf3;padding:12px;width:160px;margin:12px 0 12px 0;';                 
+            var t = document.createTextNode("Nuevo contenedor");       
+            newt.appendChild(t);                                         
+            document.getElementById("cont5").appendChild(newt); 
+            }                            
+            </script>
+            <button type="button" onclick="agregartxt2()">Escribir DIV</button><br>
+            <div id="cont5"></div>
+    </body>
+</html>

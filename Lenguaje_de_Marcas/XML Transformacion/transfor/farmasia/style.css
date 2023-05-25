@@ -1,0 +1,20 @@
+
+.container {
+    display: flex;
+    align-items: center;
+    border: dotted;
+    width: max-content;
+  }
+  
+  .items {
+    display: flex;
+    flex-direction: baseline;
+  }
+  
+  .item {
+    margin: 5px;
+  }
+  .container img {
+    width: 53px;
+    height: 55px;
+  }

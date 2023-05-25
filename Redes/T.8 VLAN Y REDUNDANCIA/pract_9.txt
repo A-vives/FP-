@@ -1,0 +1,82 @@
+COMANDOS PRA CONGIGURAR ROUTERS-ETC...5
+
+    VERIFICAR CONFIG.
+        VLAN:
+            show vlan [brief]
+            show interfaces switchport
+            ping
+        SWITCH:
+            show interfaces trunk
+            show running-config
+            show interfaces switchport -> "do show interface "interface" switchport
+            show running-interface
+            ipconfig
+        ROUTER:
+            show ip interface brief
+            show interfaces
+
+** copy running-config startup-config **
+
+    VLAN10 - 192.168.10.0/24
+    VLAN20 - 192.168.20.0/24
+
+    PC0 - 192.168.10.10/24 Gateway - 192.168.10.1/24 - Fa 0/1 M.S
+    PC1 - 192.168.20.10/24 Gateway - 192.168.20.1/24 - Fa 0/2 M.S
+
+    M.S - 0/24 --> Gig 0/0/0 R0 Gig 0/0/1 ----> Gig0/1 S.2  Fa0/1 ----> F0/1 S.3
+                                                        S.2 Fa0/2 ----> F0/2 S.3
+                                                                             S.3 F0/3 ----> Fa0 Sv.0
+
+        CONFIG M.S
+        - enable
+        - conf t
+        ** creamos las VLAN **
+        Switch(config)# vlan vlan10
+        Switch(config-vlan)# name vlan 10
+        Switch(config-vlan)# end
+        Switch(config)# vlan20
+        Switch(config-vlan)# name vlan 20
+        Switch(config-vlan)# end
+        Sitch#show vlan brief
+        ** Creamos las interfaces VLAN SVI **
+        (config)# INTERFACE VLAN10
+        (config-if)# decription Default gateway SVI for 192.168.10.10/24
+        (config-if)# ip add 192.168.10.1 255.255.255.0
+        (config-if)# no shut
+        (config-if)# exit
+        (config)# interface VLAN20
+        (config-if)# decription Default gateway SVI for 192.168.20.10/24
+        (config-if)# ip add 192.168.20.1 255.255.255.0
+        (config-if)# no shut
+        (config-if)# exit
+        (config)# 
+        ** CONFIGURAMOS PUNTOS DE ACCESO **
+        (config)# interface FastEthernet0/1 
+        (config-if)# description Access port to PC0
+        (config-if)# switchport mode access
+        (config-if)# switchport access VLAN10
+        (config-if)# exit
+        (config)# interface FastEthernet0/2 
+        (config-if)# description Access port to PC1
+        (config-if)# switchport mode access
+        (config-if)# switchport access VLAN20
+        (config-if)# exit
+        ** Habilitamos el ip routing **
+        (config-if)# ip routing
+        
+
+CONFIGURACION ETHERCHANEL
+
+    ** configurar puerto enrutado **
+    S1(config)# interface range FastEthernet 0/1 - 2
+    S1(config-if-range)# channel-group 1 mode active
+    S1(config-if-range)# exit
+    S1(config)# interface port-channel 1
+    S1(config-if)# switchport mode trunk
+    S1(config-if)# switchport trunk allowed vlan 10,20
+
+
+
+
+
+     

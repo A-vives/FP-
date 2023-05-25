@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Actividad 3</title>
+</head>
+<body>
+    <button onclick="afegir()">click aqui</button>
+
+    <h3 id="titulo"> Lorem ipsum</h3>
+    <p id="parrafo">dolor sit amet consectetur adipisicing elit. Enim eius pariatur magnam
+    maxime laboriosam eligendi aliquam, explicabo, ipsa, molestiae cupiditate beatae possimus
+    nulla provident amet. Pariatur delectus nemo quaerat veritatis.
+    <br><br>
+    dolor sit amet consectetur adipisicing elit. Enim eius pariatur magnam
+    maxime laboriosam eligendi aliquam, explicabo, ipsa, molestiae cupiditate beatae possimus
+    nulla provident amet. Pariatur delectus nemo quaerat veritatis.</p>
+    <h3 id="titulo"> Lorem ipsum</h3>
+    <p id="parrafo">dolor sit amet consectetur adipisicing elit. Enim eius pariatur magnam
+    maxime laboriosam eligendi aliquam, explicabo, ipsa, molestiae cupiditate beatae possimus
+    nulla provident amet. Pariatur delectus nemo quaerat veritatis.
+    </p>
+            
+                <h3 id="titulo"> Lorem ipsum</h3>
+                <p id="parrafo">dolor sit amet consectetur adipisicing elit. Enim eius pariatur magnam
+                maxime laboriosam eligendi aliquam, explicabo, ipsa, molestiae cupiditate beatae possimus
+                nulla provident amet. Pariatur delectus nemo quaerat veritatis.
+                <br><br>
+                dolor sit amet consectetur adipisicing elit. Enim eius pariatur magnam
+                maxime laboriosam eligendi aliquam, explicabo, ipsa, molestiae cupiditate beatae possimus
+                nulla provident amet. Pariatur delectus nemo quaerat veritatis.</p>
+                <h3 id="titulo"> Lorem ipsum</h3>
+                <p id="parrafo">dolor sit amet consectetur adipisicing elit. Enim eius pariatur magnam
+                </p>
+    <script>
+function afegir() {
+  var titulos = document.getElementById('titulo');
+  var Titulo2 = document.createElement('h2');
+  Titulo2.appendChild(document.createTextNode('Titulo º2: dolor sit amet consectetur'));
+  for (var i = 0; i < titulos.length; i++) {
+    var nodoPadre = titulos[i];
+    var nodoHer = nodoPadre.firstChild;
+    nodoPadre.insertBefore(Titulo2.cloneNode(true), nodoHer);
+  }
+}
+function cambiarh2() {
+  let text
+  document.getElementsByTagName('h2');
+  
+}
+    </script>
+</body>
+</html>

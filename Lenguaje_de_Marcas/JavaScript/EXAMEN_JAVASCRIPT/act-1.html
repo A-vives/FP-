@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        
+        <button onclick="mayor4()">El menor de los 3</button>
+    <script>
+        function mayor4 () {
+            var num1 = prompt ("Escribe un numero");
+            var num2 = prompt ("Escribe un numero");
+            var num3 = prompt ("Escribe un numero");
+       
+            let menor = Math.max(parseFloat(num1), parseFloat(num2), parseFloat(num3));
+                                      console.log("El menor de los tres numeros es: " + menor);
+        }
+    </script>
+    </body>
+</html>

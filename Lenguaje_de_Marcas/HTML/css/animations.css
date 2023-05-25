@@ -1,0 +1,13 @@
+#opt-exit button:hover span:first-child {
+    transform: rotate(45deg);
+    transition-delay: .5;
+}
+
+#opt-exit button:hover span:nth-child(2) {
+    opacity: 0;
+}
+
+#opt-exit button:hover span:last-child {
+    transform: rotate(-45deg);
+    transition-delay: .5;    
+}

@@ -1,0 +1,38 @@
+UT8- Gestion de procesos de usuarios y red
+8.1 CREAR USUARIOS
+    - debemos añadir en el archivo /etc/passwd una linea tal que asi
+        pancarcho:x:1010:1000:pancarcho,,,:home/pancarcho:/bin/bash
+            pancarcho = Nombre del usuario cuando inicia sesion 1-32 caracteres
+            X = contraseña, 'x' nos indica que esta cifrada en el archivo /etc/shadow
+            1010 = ID de usuario, el 0 esta reservado para el root, de 1-99 para cuentas predefinidas, del 10 al 999 cuentas, grupos administrativos y del sistema
+            1000 = ID de grupo (almacenado el /etc/group -> "pancarcho:x:1000")
+            pancarcho,,, = comentario, permite añadir informacion adicional
+            home/pancarcho = directorio de inicio
+            /bin/bash = ruta absoluta de la shel que usara ese usuario
+    *sudo cp -r /etc/skel/.??* /home pancarcho * = Copiamos el esqueleto del escritorio home para construirlo
+    * sudo useradd -m pancarcho * = creamos usuario y todo lo anterior se realiza automaticamente
+    * sudo deluser pancarcho * = Eliminamos usuario
+
+8.1.1 GESTIONAR CONTRASEÑAS
+    *passwd* = cambiar contraseña en el usuario actual
+    *sudo passwd pancarcho* = cambiamps la contraseña de cualquier usuario
+    *sudo passwd -l pancarcho* = Bloqueamos contraseña
+    *sudo passwd -u pancarcho* = desBloqueamos contraseña
+    *sudo passwd -e pancarcho* = Contraseña temporal ( cambia cuando inicia sesion)
+    *sudo passwd -n 10 pancarcho* = En 10 dias se obligara a cambiar la contraseña
+    *sudo passwd -x 10 pancarcho* = Maximo de dias que se puede estar sin cambiar la contraseña
+    *sudo passwd -S pancarcho* = Comprobar estado de contraseña
+                                    pancarcho = usuario
+                                    P =  funciona
+                                    L =  bloqueada
+                                    NP = no tiene
+                                    90 = periodo minimo de cambio   (dias)
+                                    120 = periodo maximo de cambio (dias)
+                                    7 = periodo de aviso
+                                    -1 = inactividad de la contraseña
+
+8.2 Permisos i proteccion
+    Permisos archivos
+        *ls -l p.txt* = Lista los permisos de ese archivo
+            x = ejecutar
+            

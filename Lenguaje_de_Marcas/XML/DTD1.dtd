@@ -1,0 +1,20 @@
+<!ELEMENT company (clientes+, supliers+)>
+<!ELEMENT clientes (cliente+)>
+<!ELEMENT cliente (purchase+)>
+<!ELEMENT purchase EMPTY>
+<!ELEMENT supliers (suplier+)>
+<!ELEMENT suplier (product*)>
+<!ELEMENT product EMPTY>
+
+<!ATTLIST cliente name CDATA #REQUIRED>
+<!ATTLIST cliente address CDATA #REQUIRED>
+<!ATTLIST cliente surname CDATA #REQUIRED>
+<!ATTLIST cliente birthday CDATA #REQUIRED>
+
+<!ATTLIST suplier nif CDATA #REQUIRED>
+<!ATTLIST suplier name CDATA #REQUIRED>
+<!ATTLIST suplier address CDATA #REQUIRED>
+
+<!ATTLIST product code CDATA #REQUIRED>
+<!ATTLIST product name CDATA #REQUIRED>
+<!ATTLIST product price CDATA #REQUIRED>

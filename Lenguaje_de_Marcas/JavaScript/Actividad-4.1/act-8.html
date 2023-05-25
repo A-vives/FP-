@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Actividad 8</title>
+</head>
+<header>
+  <style>
+  </style>
+    
+  </header>
+
+  <body>
+    <h1>Introduce 5 nombres:</h1>
+    <form id="formulari">
+      
+      <label for="nom1">Nom 1:</label>
+      <input type="text" id="nombre1" name="nombre1"><br>
+
+      <label for="nom2">Nom 2:</label>
+      <input type="text" id="nombre2" name="nombre2"><br>
+
+      <label for="nom3">Nom 3:</label>
+      <input type="text" id="nombre3" name="nombre3"><br>
+
+      <label for="nom4">Nom 4:</label>
+      <input type="text" id="nombre4" name="nombre4"><br>
+
+      <label for="nom5">Nom 5:</label>
+      <input type="text" id="nombre5" name="nombre5"><br>
+      
+      <button type="button" onclick="ListaOrdenada()">Lista Ordenada</button>
+      
+    </form>
+    <main id="llista">
+
+    </main>
+    <script>
+      function ListaOrdenada() {
+        let nombre1 = document.getElementById("nombre1").value;
+        let nombre2 = document.getElementById("nombre2").value;
+        let nombre3 = document.getElementById("nombre3").value;
+        let nombre4 = document.getElementById("nombre4").value;
+        let nombre5 = document.getElementById("nombre5").value;
+    
+        let noms = [nombre1, nombre2, nombre3, nombre4, nombre5];
+        
+        var llista = document.createElement("ol");
+        for (var i = 0; i < noms.length; i++) {
+          var item = document.createElement("li");
+          var text = document.createTextNode(noms[i]);
+          item.appendChild(text);
+          llista.appendChild(item);
+        }
+        var main = document.getElementById("llista");
+        main.appendChild(llista);
+      }
+
+    </script>
+  </body>
+</html>

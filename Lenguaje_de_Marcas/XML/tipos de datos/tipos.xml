@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:simpleType name="TipoIngresosAnuales"> <!-- definimos tipo simple de dato -->
+    <xs:restriction base="xs:float"> <!-- la restriccion es del tipo de dato float-->
+        <xs:minLeght  value="6"/>   <!-- Minimo valor -->
+        <xs:maxLeght  value="12"/>  <!-- Maximo valor-->
+    </xs:restriction>
+</xs:simpleType>
+<xs:element name="clave" type="TipoContraseña"/>
+    <clave>Mariano!</clave>
+    <clave>Mar</clave> 
+
+<xs:element name="edadLaboral">
+    <xs:simpleType>
+        <xs:restriction base="xs:nonNegativeInteger">
+            <xs:mininclusive value="16"/>
+            <xs:mazExclusive value="70"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:element>
+
+ <xs:simpleType>
+        <xs:restriction base="xs:nonNegativeInteger"> <!-- Restringiomos el tipo de datos de edad laboral con los valores abajo definidos-->
+            <xs:mininclusive value="16"/>
+            <xs:mazExclusive value="70"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:element name="edadLaboral" type="TipoEdadLaboral"></xs:element>
+
+<xs:simpleType name="TipoEstaciones"> <!-- En el tipo de datos TipoEstacines solo puede haber los valores abajo definidos-->
+        <xs:restriction base="xs:token">
+        <xs:enumeration value="Primavera"/>
+        <xs:enumeration value="Verano"/>
+        <xs:enumeration value="Otoño"/>
+        <xs:enumeration value="Invierno"/>
+    </xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="TipoCantidad"> <!-- Este tipo de datos solo acepta = 222222222222.22 (11 digitos y 2 decimales)-->
+    <xs:restriction>
+        <xs:totalDigits value="11"/>
+        <xs:fractionDigits value="2"/>
+    </xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="TipoDireccionFormateada"> <!-- Nos formatea lo que le pasemos quitando los espacios en blanco a la derecha de la cadena-->
+    <xs:restriction base="xs:string"> 
+        <xs:whiteSpace value="remplace"/>
+    </xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="TipoTelefonoPunteazo">
+</xs:simpleType>
+
+<xs:simpleType name="MatriculasAntiguas">
+    <xs:restriction base="xs:string">
+        <xs:pattern value="[A-Z]{1,2}\-\d{4}\-[A-Z]{1,2}"></xs:pattern>
+    </xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="MatriculasAntiguas">
+    <xs:restriction base="xs:string">
+        <xs:pattern value="[A-Z]{1,2}\-\d{4}\-[A-Z]{1,2}"></xs:pattern>
+    </xs:restriction>
+</xs:simpleType>

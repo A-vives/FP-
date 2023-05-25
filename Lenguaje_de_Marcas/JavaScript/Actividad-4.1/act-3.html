@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Actividad 3</title>
+    <link href="style.css" rel="stylesheet" type="css/css">
+</head>
+<body>
+  <div class="botone">
+  <button onclick="modificarunTitulo()">Modificar 1 Titulo</button>
+  <button onclick="modificarTitulo()">Modificar todos los Titulos</button>
+</div> 
+ <h2>H2 DE EJEMPLO</h2>
+    <h3 id="titulo"> Lorem ipsum</h3>
+    <p id="parrafo">dolor sit amet consectetur adipisicing elit. Enim eius pariatur magnam
+    maxime laboriosam eligendi aliquam, explicabo, ipsa, molestiae cupiditate beatae possimus
+    nulla provident amet. Pariatur delectus nemo quaerat veritatis.
+    <br><br>
+    dolor sit amet consectetur adipisicing elit. Enim eius pariatur magnam
+    maxime laboriosam eligendi aliquam, explicabo, ipsa, molestiae cupiditate beatae possimus
+    nulla provident amet. Pariatur delectus nemo quaerat veritatis.</p>
+    <h3 id="titulo"> Lorem ipsum</h3>
+    <p id="parrafo">dolor sit amet consectetur adipisicing elit. Enim eius pariatur magnam
+    maxime laboriosam eligendi aliquam, explicabo, ipsa, molestiae cupiditate beatae possimus
+    nulla provident amet. Pariatur delectus nemo quaerat veritatis.
+    </p>
+    <h2>H2 DE EJEMPLO</h2>        
+                <h3 id="titulo"> Lorem ipsum</h3>
+                <p id="parrafo">dolor sit amet consectetur adipisicing elit. Enim eius pariatur magnam
+                maxime laboriosam eligendi aliquam, explicabo, ipsa, molestiae cupiditate beatae possimus
+                nulla provident amet. Pariatur delectus nemo quaerat veritatis.
+                <br><br>
+                dolor sit amet consectetur adipisicing elit. Enim eius pariatur magnam
+                maxime laboriosam eligendi aliquam, explicabo, ipsa, molestiae cupiditate beatae possimus
+                nulla provident amet. Pariatur delectus nemo quaerat veritatis.</p>
+                <h3 id="titulo"> Lorem ipsum</h3>
+                <p id="parrafo">dolor sit amet consectetur adipisicing elit. Enim eius pariatur magnam
+                </p>
+    <h2>H2 DE EJEMPLO</h2>
+    <script>
+function modificarunTitulo() {
+  var modif = prompt("¿Qué quieres poner de título?");
+  document.getElementsByTagName('h2')[0].innerHTML = modif;
+}
+
+function modificarTitulo() {
+  var modif = prompt("¿Qué quieres poner de titulo?");
+  var titulos = document.getElementsByTagName('h2');
+  for (var i = 0; i < titulos.length; i++) {
+    titulos[i].innerHTML = modif;
+  }
+}
+    </script>
+</body>
+</html>

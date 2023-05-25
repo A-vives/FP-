@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<persona xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="squema.xsd">
+    
+        <vehiculos>
+            <vehiculo tipo="barco | coche | tren | bicicleta" matricula="opcional"></vehiculo>
+            <vehiculo tipo="barco | coche | tren | bicicleta" matricula="opcional"></vehiculo>
+            <vehiculo tipo="barco | coche | tren | bicicleta" matricula="opcional"></vehiculo>
+            <vehiculo tipo="barco | coche | tren | bicicleta" matricula="opcional"></vehiculo>
+            <vehiculo tipo="barco | coche | tren | bicicleta" matricula="opcional"></vehiculo>
+        </vehiculos>
+</persona>

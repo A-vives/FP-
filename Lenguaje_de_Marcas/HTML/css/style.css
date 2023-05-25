@@ -1,0 +1,21 @@
+@import 'animations.css';
+#opt-exit button {
+    display: flex;
+    flex-direction: column;
+    width: 3rem;
+    height: 3rem;
+    border: 0;
+    background: transparent;
+    gap: .64rem;
+}
+#opt-exit button > span {
+    background: black;
+    height: 2px;
+    width: 100%;
+    border-radius: 5px;
+    transform: none;
+    transform-origin: left;
+    transition: .7s;
+}
+
+

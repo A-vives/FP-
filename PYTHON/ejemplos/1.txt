@@ -1,0 +1,18 @@
+VARIABLES
+
+TIPOS DE DATOS
+
+OPERACIONES
+
+NOTACIONES COMPACTAS
+
+Para cambiar una variable de valor se crea una intermedia
+a=2
+b=3
+
+swap=a
+a=b
+b=swap
+
+a=3
+b=2

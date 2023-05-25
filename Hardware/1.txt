@@ -1,0 +1,29 @@
+Ver la targeta i ntegrada, el 3 y el 5 no lo hacemos
+en el 6 abriremos test performance
+
+
+Hay que coger informacion por la integrada
+    marca y modelo,
+    freq
+    tip de mem, capacidad, freq -  convierte en Cpu
+    res. max
+    intarfaz
+    salidas de video
+    posicion rating
+    score benchmark
+    fps a csgo a 1080 LOW
+
+    6- Comparar las targetras de video
+    2D fonts and texto
+    windows interface
+    image filters
+    image rendering
+    Direct 2d
+    directx 10
+    directx 11
+
+    que es un virus
+    tipos de clonaciones
+        disco a disco 
+        por imagen
+        

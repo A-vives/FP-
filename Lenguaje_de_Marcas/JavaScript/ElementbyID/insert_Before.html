@@ -1,0 +1,20 @@
+
+<html>
+<body>
+<div id="parraf">
+<p>Primer p</p>
+<p>Segon p</p>
+</div>
+<button onclick=afegir()> Click </button>
+<script>
+function afegir() {
+var nodeElement = document.createElement('p'); //cream i guardam a una variable el nou paragraf
+nodeElement.appendChild(document.createTextNode('Nou paragraf')); //Afegim el text
+var nodePare = document.getElementById('parraf'); // On inserirem
+var nodeGerma = nodePare.firstChild; // Guardam el primer paràgraf.
+nodePare.insertBefore(nodeElement, nodeGerma); //inserim el nou element
+}
+
+</script>
+</body>
+</html>

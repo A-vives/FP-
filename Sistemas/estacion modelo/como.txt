@@ -1,0 +1,14 @@
+Hay que instalar un sistema operativo para definir una estacion modelo
+hay que diseñar la estacion modelo
+sistema.operativo
+Controladores
+Aplicaciones
+Configuracion
+
+tipos de clonaciones
+Disco - Disco
+Particion - Particion
+Imagen - Disco/Particion
+    Almacenar en local
+    Almacenar en la red
+    Servidor de imagenes

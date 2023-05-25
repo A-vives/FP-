@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <button onclick="frases()">compara textos</button>
+    <script>
+       function frases() {
+  var texto1 = '';
+  var texto2 = '';
+
+  while (texto1.length === texto2.length || texto1 !== texto2) {
+    texto1 = prompt('Introduce el primer texto:');
+    texto2 = prompt('Introduce el segundo texto:');
+  }
+
+  const textoFooter = document.getElementById('foot');
+  textoFooter.textContent = 'Texto concatenado: ' + textoConcatenado;
+}
+
+    </script>
+    </body>
+    <footer >
+        <p d="foot"></p>
+    </footer>
+</html>

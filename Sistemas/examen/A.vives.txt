@@ -1,0 +1,147 @@
+1.1 - find -maxdepth 1 -type f -name "*D*" 2>/dev/null | find -maxdepth 1 -type d -name "*D*" 2>/dev/null
+
+
+
+1.2 - find -type f 2>/dev/null | find -type d 2>/fdev/null | wc -l
+
+
+
+1.3 - find -maxdepth 1 -type f -name "*D*" 2>/dev/null | find -maxdepth 1 -type d -name "*D*" 2>/dev/null | wc -l > AlejandroVives.txt
+
+
+
+
+
+2 - sudo find / -type f -name ".a*" 
+
+
+
+3 - cut -c 2-4 loren.txt
+ 
+
+
+4 - grep "Rowan Atkinson" vives.txt
+
+
+
+5 - cuenta.sh                                 
+
+#!/bin/bash
+
+
+
+echo "----escribe un numero del 0 al 50----"
+
+
+
+read numero
+
+
+
+for i in {0..50}
+
+do
+
+        if [[ $i -eq 50 ]]; then
+
+        echo "he dicho hasta el 50 no mas grandes"
+
+        exit 1
+
+        fi
+
+        if [[ $i -eq $numero ]]; then  
+
+        break
+
+        fi
+
+
+
+i=$(( $i + 1 ))
+
+echo "$i"
+
+done
+
+
+
+6 - arc.sh
+
+#! /bin/bash
+
+
+
+directorio=$(pwd)
+
+lista_archius=`ls -d $directorio`
+
+
+
+echo "---------------------------------------"
+
+echo "-----estas buscando en $directorio-----"
+
+echo "---------------------------------------"
+
+echo "----en que archivo estas pensando?-----"
+
+echo "---------------------------------------"
+
+
+
+read udirec
+
+
+
+echo "-------------------------------------------------------"
+
+echo "---------------Qué quieres saber de:-------------------"
+
+echo "---------------$directorio/$udirec--------------------"
+
+echo "-------------------------------------------------------"
+
+echo "--------1# Usuario propietario-------------------------"
+
+echo "--------1# Ver Permisos del archivo-directorio---------"
+
+echo "----------------------3# Salir-------------------------"
+
+echo "-------------------------------------------------------"
+
+
+
+read sel 
+
+
+
+if [[ $sel == 1 ]]; then
+
+    user_id=$(stat -c %U "$directorio/$udirec")
+
+ 	 echo "$user_id"
+
+
+
+    agent_id=$(stat -c %A "$directorio/$udirec")
+
+    echo "$agent_id"
+
+	perm_id=$(stat -c %A %a "$directorio/$udirec")
+
+    echo "$perm_id"
+
+
+
+elif [[ $sel == 3 ]]; then
+
+    exit 1 
+
+    
+
+else
+
+    echo "Opción no válida."
+
+fi

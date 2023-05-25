@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<fichas xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="squema.xsd">
+    <persona>
+        <nombre>Oliver Queen</nombre>
+        <edad>55</edad>
+        <dni>12345678B</dni>
+        <vehiculos>
+            <vehiculo tipo="barco" matricula="12345"/>
+        </vehiculos>
+        <autenticacion>
+        <clave>Token12345</clave>
+        </autenticacion>
+    </persona>
+
+    <persona>
+        <nombre>Kevin Bacon</nombre>
+        <edad>52</edad>
+        <dni>12345678B</dni>
+        <vehiculos>
+            <vehiculo tipo="barco"/>
+        </vehiculos>
+        <autenticacion>
+        <clave>12345678</clave>
+        </autenticacion>
+    </persona>
+
+    <persona>
+        <nombre>Rocket el mapache</nombre>
+        <edad>5</edad>
+        <dni>12345678B</dni>
+        <vehiculos>
+            <vehiculo tipo="barco" matricula="565655"/>
+        </vehiculos>
+        <autenticacion>
+        <clave>Clave12345</clave>
+        </autenticacion>
+    </persona>
+    <persona>
+        <nombre>Rocket el mapache</nombre>
+        <edad>5</edad>
+        <dni>12345678B</dni>
+        <vehiculos>
+            <vehiculo tipo="tren" matricula="1112255"/>
+        </vehiculos>
+        <autenticacion>
+        <clave>12345Aa#789</clave>
+        </autenticacion>
+    </persona>
+    <persona>
+        <nombre>Rocket el mapache</nombre>
+        <edad>5</edad>
+        <dni>12345678B</dni>
+        <vehiculos>
+            <vehiculo tipo="coche" matricula="2568"/>
+        </vehiculos>
+        <autenticacion>
+        <token>12345678</token>
+        </autenticacion>
+    </persona>
+    <persona>
+        <nombre>Rocket el mapache</nombre>
+        <edad>5</edad>
+        <dni>12345678B</dni>
+        <vehiculos>
+            <vehiculo tipo="bicicleta"/>
+        </vehiculos>
+        <autenticacion>
+        <token>12345678</token>
+        </autenticacion>
+    </persona>
+</fichas>

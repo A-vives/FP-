@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE NACEX SYSTEM "data.dtd">
+<NACEX>
+    <camioneros>
+      <camionero id="C01" nombre="" cam_tlf="" cam_dir="" cam_sal="" ciudad="">
+
+        <paquetes>
+          <paquete id="P01" codigo_provincia="" descripcion="">
+            <destinatario nombre="" direccion_envio=""></destinatario>
+          </paquete>
+
+          <paquete id="P02" codigo_provincia="" descripcion="">
+            <destinatario nombre="" direccion_envio=""></destinatario>
+          </paquete>
+
+        </paquetes>
+
+      </camionero>
+      <camionero id="C02" nombre="" cam_tlf="" cam_dir="" cam_sal="" ciudad="">
+
+        <paquetes>
+          <paquete id="P03" codigo_provincia="" descripcion="">
+            <destinatario nombre="" direccion_envio=""></destinatario>
+          </paquete>
+
+        </paquetes>
+      </camionero>
+    </camioneros>
+
+    <provincias>
+      <provincia codigo="P001" nombre="Valencia"></provincia>
+      <provincia codigo="P002" nombre="Madrid"></provincia>
+    </provincias>
+
+    <camiones>
+      <camion id="CA001" matricula="1234CVD" modelo="PICK" tipo="" potencia="">
+        
+        <conductores>
+
+          <conductor id="C01"/>
+          <conductor id="C02"/>
+
+        </conductores>
+      </camion>
+
+      <camion id="CA002" matricula="1234CDS" modelo="" tipo="" potencia="">
+
+        <conductores>
+          <conductor id="C01"/>
+        </conductores>
+
+      </camion>
+    </camiones>
+
+  </NACEX>

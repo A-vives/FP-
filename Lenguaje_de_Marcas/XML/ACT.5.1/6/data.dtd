@@ -1,0 +1,47 @@
+<!ELEMENT seat (clientes, venta, coches, taller)>
+<!ELEMENT clientes (cliente+)>
+<!ELEMENT cliente EMPTY>
+    <!ATTLIST cliente id ID #REQUIRED>
+    <!ATTLIST cliente nombre CDATA #REQUIRED>
+    <!ATTLIST cliente apellido CDATA #REQUIRED>
+    <!ATTLIST cliente direccion CDATA #REQUIRED>
+    <!ATTLIST cliente tlf CDATA #REQUIRED>
+<!ELEMENT venta EMPTY>
+    <!ATTLIST venta id_cliente ID #REQUIRED>
+    <!ATTLIST venta matricula CDATA #REQUIRED>
+<!ELEMENT coches (coche+)>
+<!ELEMENT coche EMPTY>
+    <!ATTLIST coche tipo (nuevo | usado) #REQUIRED>
+    <!ATTLIST coche id ID #IMPLIED>
+    <!ATTLIST coche km CDATA #IMPLIED>
+    <!ATTLIST coche modelo CDATA #IMPLIED>
+    <!ATTLIST coche marca CDATA #IMPLIED>
+    <!ATTLIST coche color CDATA #IMPLIED>
+    <!ATTLIST coche matricula CDATA #IMPLIED>
+    
+<!ELEMENT taller (mecanicos, reparaciones)>
+<!ELEMENT mecanicos (persona+)>
+<!ELEMENT persona EMPTY>
+    <!ATTLIST persona id ID #REQUIRED>
+    <!ATTLIST persona nombre CDATA #REQUIRED>
+    <!ATTLIST persona apellido CDATA #REQUIRED>
+    <!ATTLIST persona contrato CDATA #REQUIRED>
+    <!ATTLIST persona mobil CDATA #REQUIRED>
+    <!ATTLIST persona salario CDATA #REQUIRED>
+<!ELEMENT reparaciones (reparacion+)>
+<!ELEMENT reparacion (mecanico+)>
+<!ELEMENT mecanico EMPTY>
+    <!ATTLIST mecanico idPersona IDREF #REQUIRED>
+
+    <!ATTLIST reparacion matricula CDATA #REQUIRED>
+    <!ATTLIST reparacion fecha CDATA #REQUIRED>
+    <!ATTLIST reparacion horas CDATA #REQUIRED>
+
+
+<!-- 
+?- 0 - 1 
+*- 0 - N
++- 1 - N
+A, B - B despues de A
+A|B - A ó B, pero no A y B
+-->

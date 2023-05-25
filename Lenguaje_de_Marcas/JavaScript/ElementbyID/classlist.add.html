@@ -1,0 +1,21 @@
+<html>
+<head>
+<style>
+.estil {
+width: 300px;
+height: 50px;
+background-color: red;
+}
+.estil2 {color: red; }
+</style>
+</head>
+<body>
+<button onclick="afegirclasse()">clica</button>
+<main id="nav"> <p>Text del main</p> </main>
+<script>
+function afegirclasse() {
+document.getElementById("nav").classList.add("estil","estil2");
+}
+</script>
+</body>
+</html>

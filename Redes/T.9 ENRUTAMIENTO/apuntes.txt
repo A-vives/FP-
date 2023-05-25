@@ -1,0 +1,83 @@
+9: ENRUTAMIENTO Lo verde corresponde al segundo curso del netacad
+    Vimos en el T5: capa de red, el router elige el mejor camino para enviar el paquete
+        Determinamos la interfaz a la que enviamos el paquete
+            EL PRINCIPAL TRABAJO DEL ROUTER ES DETERMINAR LA MEJOR RUTA 
+                Como lo hace?
+                Usa su tabla de enrutamiento para encontrar la mejor RUTA
+                    Lo que hace es coge la direccion ip y las compara con las que tenga guardadas
+                Esta tabla tiene los dos prefijos y tiene que haber una coincidencia, por lo menos los que pertenecen a la mascara de red
+                    Destino 172.16.2.10 = 10101100.00010000.00000000.00001010
+                        Red: 172.16.0.0/12
+                            172.16.0.0/18
+                Para satisfacer las coincidencias necesarias han de satisfacer la longitud del prefijo
+                Por eso se dice que la mejor ruta es la que tiene la coincidencia mas larga
+            En el caso de IPv6 comparamos la de destino con la longitud de red que tenemos en la tabla de enrutamiento
+    
+        RUTAS REMOTAS   
+            No estan conectadas directamente al router
+                Estaticas: 
+            Predeterminadas/ultimo recurso: Todo lo que no haga macht con una direccion conocida lo manda ahí, el prefijo es 0.
+
+    9.2-REENVIO DE PAQUETES
+        Despues de hacer la comprobacion 
+        1- la trama IP llega a la interfaz de entrada
+        2- el router examina la IP de destino y consulta su tabla de enrutamiento  
+        3- El router encuentra el prefijo cinc¡ncidente mas largo
+        4- El router encapsula el paquete en la nueva trama de enlace de datos lo reenvia por la interfaz de salida
+        5- Si no hay ninguna coincidencia se elimina el paquete o reenvia por la interfaz de ultimo recurso .
+
+    Para encapsular el paquete en la trama Ethernet necesita determinar la direccion MAC de destino asociada a la IP de destino del paquete
+        PAQUETE IPV4:
+            -Comprueba que este en la tabla ARP
+                -Si no esta no la sabe, no se puede rellenar el campo hace una solicitud ARP en broadcast(todos los equipos de la red)
+        PAQUETE IPv6:
+            -Comprobamos la (tabla ARP DE IPv6) cache de vecinos 
+                -ICMPV6-ARP
+                    NS= Solicitud de vecino, comprueba que la IPv6 esta libre y la asigna a MAC
+                    NA= Ofrece MAC address
+            R1 --------PC.2
+                -ARP REQ
+                -NS
+            PC.2 ------ R1
+                -ARP Reply
+                -NA
+        Destinatario es una interfaz de otro router, necesitamos esa mac,
+            Consultamos la tabla ARP del router propia sino esta se descarta
+        
+        La Tabla ARP Contiene las redes conocidas y porciones de red
+            Como han sido descubiertos:
+                L - Identifica direccion asignada por router
+                C - Identifica una red conectada directamente
+        PRINCIPIOS DE ENRUTAMIENTO
+        Decide por si mismo en base a lo que sabe
+            R1 no cono ce las rutas de R2
+        
+    TABLA DE ENRUTAMIENTO
+    IPv4: 
+        O   10.0.4.0/24     [110/50]    via 10.0.3.2,   00:13:29,   Serial0/0/0
+        
+
+        O               Como ha sido descubierta
+        10.0.4.0/24     Interfaz 
+        [110/50]        Distancia Administrativa: Confiabilidad de ruta, cuanto menor sea mayor es la confianza 
+                        Metrica: Indica el valor para llegar a la red remota (numero de saltos hasta destino) 
+                        [ Depende del protocolo RIP: Hace referencia a la cantiadad de saltos hasta destino OSPF : coste de ancho de banda no de saltos] 
+                        Algoritmo Dijska:
+        via 10.0.3.2,   Next Jump, Esta ip hace referencia al siguiente router
+        00:13:29,       Tiempo que pasó desde que se descubrio la routa
+        Serial0/0/0     Interfaz de salida
+        
+        O   10.0.4.0/24     [110/50]    via 10.0.3.2,   00:13:29,   Serial0/0/0
+
+            Ruta local: Para cada una de las redes conectadas localmente
+                hace referencia a la red conectada directamente code = L
+            Rutas estaticas: Se configuran de forma manual, no se actualizan automaticamente
+                Si se escala la red se ha de configurar manualmente
+                **Protocolos de redundancia de primer salto
+                Mejora en la seguridad y el uso de recursos, Esta informacion no va a estar circulando por la red
+                    -Facilita el mantenimiento de redes pequeñas
+                    -U tiliza una ruta predeterminada para todos los equipos de la red
+                    -
+            Rutas dinamicas: Realizan distintas tareas, com la deteccion de redes y el mantenimiento de tablas ARP
+                Este nos proporciona bentajas sobre la automatizacion de la seleccion de la mejor ruta
+            

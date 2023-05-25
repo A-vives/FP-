@@ -1,0 +1,80 @@
+PLANIFICACION Y ADMINISTRACION DE REDES
+
+CAPA APLICACION
+    Esta se corresponde a 3 capas del modelo OSI
+    Mas cerca del usuario final, nos proporciona la interfaz de la aplicacion
+    aplicacion, presentacion, sesion, 
+
+    OSI
+    APLICACION      aplicacion
+    presentacion 
+        da formato a los datos, comprime y descomprime, cifra y descifra
+    sesion
+        Maneja el dialogo entre aplicaciones
+    transporte
+    RED
+    enlace
+
+PROTOCOLOS
+    APLICACION
+        HTTP - HTTPS = Protocolo web
+        PASO1:
+            el navegador inrerpreta las tres partes de la url
+                HTTP(protocolo o esquema)
+                www.cisco.com(nombre del servidor)
+                index.html (nombre de archivo especifico solicitado)
+        PASO2:
+            Verifica con un servidor DNS, para convertir el nombre del servidor en una direccion numerica
+        PASO3:
+            El servidor webenvia el codigo HTML  de esta pagina web
+        PASO4:
+            El navegador descifra el mensage y lo muestra
+        HTTP protocolo de peticiones
+            GET
+
+        Correo electronico SMTP, IMAP, POP3
+            SMTP - Enviar solicitudes
+                Puerto: 25
+                Puerto cifrado: 2525
+                Puerto IANA: 587
+                SSL: 465
+            IMAP & POP3 - recuperar correo
+                POP3 - recuperar correo pero cuando descargamos se elimina del servidor
+                        No adecuado para empresa pequeña
+                    Puerto: 110
+                    Puerto Cifrado: 995
+                IMAP - Descarga copias y cuando se elimina se elimina del servidor
+                    Puerto: 143
+                    Puerto cifrado: 993
+        DNS - Resolucion de nombres
+            Si enviamos una peticion a https://www.cisco.com/index.html
+            nos resolverá a una direccion numerica tal que = 164.35.68.56
+                En caso de no poder dar la respuesta, se lo pedira a otro nodo DNS conectado y nos dara él el mensage resuelve
+            Jerarquia: Se puede hacer estos segundos terceros de izquierda a derecha
+                com   net
+                cisco.com.net
+                    nslookup nombre sv - nos devuelve el numero de dns
+        
+    DHCP: Automatiza la asignacion de IP a los dispositivos que le piden IP
+        Se puede hacer de manera dinamica o estatica
+            Hay una pool de ips asignables
+        SE USA SOBRETODO EN REDES GRANDES
+        Cuando finaliza la asignacion, se guarda esa ip para el siguiente que la necesite
+            En las medianas y grandes suele estar dedicado
+            En las redes pequeñas viene integrado en el central
+                Se puede combinar, el dinamico lo podemos usar para dispositivos finales:
+                    disp, de red, gateways, switches, servidores, 
+        
+        Cuando un dispositivo spawnea en una red necesita una ip
+            Manda un paquete DHCP en difusion pidiendo su ip
+            El servidor DHCP le responde con la configuracion que pertoque
+                Se le puede añadir tiempo limite
+            Si hay mas de un servidor dns, como me responderan los 2 solo cogerá una
+                esta se la manda a todos los pc para que la guarden
+            Si no hay mas ips vuelve desde el principio.
+            El gateway predetermindao se establece de forma dinamica    
+    
+    FTP: Protocolo transferencia de archivos
+        Establecemos una conexion de control - Puerto 21
+        Se transfieren datos - Puerto 20
+        

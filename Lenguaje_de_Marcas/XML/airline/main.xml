@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE airline_DB SYSTEM "data_airline.dtd">
+<airline_DB>
+<airlines>
+    <airline name="ryanair">
+        <airplanes>
+            <airplane reg_num="01" model="A380" capacity="125">
+                <flight fl_num="V001" dep_airport="PMI" dest_airport="MAD" dep_date="23/06/2023 15:00" dest_date="23/06/2023 17:00"/>
+            </airplane>
+            <airplane reg_num="02" model="A380" capacity="125">
+                <flight fl_num="V002" dep_airport="PMI" dest_airport="MEN" dep_date="23/06/2023 15:00" dest_date="23/06/2023 17:00"/>
+            </airplane>
+        </airplanes>
+    </airline>
+</airlines>
+<passengers>
+    <passenger name="Alejandro" surname="Vives" email="uno@gmail.com" seat="1">
+        <booking idflight="V001" seat="C17"/>
+    </passenger>
+    <passenger name="Miguel" surname="Hernandez" email="noteimporta@gmail.com" seat="2">
+        <booking idflight="V001" seat="C14"/>
+    </passenger>
+    <passenger name="Xisco" surname="Punk" email="e@gmail.com" seat="3">
+        <booking idflight="V001" seat="C15"/>
+    </passenger>
+    <passenger name="Tomas" surname="Guerra" email="andfa@gmail.com" seat="4">
+        <booking idflight="V001" seat="C16"/>
+    </passenger>
+</passengers>
+<airports>
+    <airport name="MAD"/>
+    <airport name="PMI"/>
+    <airport name="MEN"/>
+    <airport name="IBZ"/>
+</airports>
+</airline_DB>

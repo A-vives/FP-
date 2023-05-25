@@ -1,0 +1,30 @@
+UD.9 DATA SECURITY MANAGEMENT
+
+9.1 - Failures and fault recovery
+    Transpone la normativa comunitaria al derecho propio del pais, 
+    A nivel de proteccion de datos en europa GDPR - Unificar derechos de proteccion de datos, la idea que todos los paises cumplan las mismas reglas
+    Este reglamente salio en 2016 y se trasouso en el 2018 mas la garantia de derechos digitales
+        Para por ejemplo que un empleador no supiese que tiene una enfermedad x para contratarlo
+           
+           
+    9.1.1 - Data Protection.       
+     La LOPDGDD Regula el proceso de los datos personales como se guardan, se transfieren, se comparten y se publican.
+     Cesion a terceros, puedes cedder los datos a otra empresa para que los procese
+     Derechos de los usuarios: Acceso, rectificar, borrar, restringir y procesar tus datos.
+     Hay que considerar esto a la hora de trabajar porque si un cliente te pide sus datos hay que darselos
+     -Derecho a la portabilidad
+    
+    En caso de una brecha hay que demostrar la diligencia, que todo se ha hecho bien.
+    
+    -Pasos a seguir en caso que se prodizca un ataque
+        Assess the extends of the breach: Determinar la magnitud de la brecha
+
+        Notificar a la AEPD antes de 72h
+
+        Notificar a los clientes
+
+        Implementar remedios para el problema y demostrar que se ha solucionado
+
+        Documentar el incidente para demostrar que se ha hecho un buen trabajo. 
+
+    GDPR - 

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Actividad 7</title>
+</head>
+<header>
+  <style>
+  </style>
+    
+  </header>
+
+  <body>
+    <h1>Conversor de euros a dólares</h1>
+    <form>
+      <label>
+        Introduce la cantidad en euros:
+        <input type="number" id="cantidad-euros"><br><br>
+      </label>
+      <label>
+        Introduce la cantidad en dólares:
+        <input type="number" id="cantidad-dolares"><br><br>
+      </label>
+      <button type="button" onclick="convertir('euros')">Convertir a dólares</button>
+      <button type="button" onclick="convertir('dolares')">Convertir a euros</button>
+      <button type="reset">Limmpiar campos</button>
+
+    </form>
+    <script>
+      function convertir(tipo) {
+        var cantidadEuros = document.getElementById('cantidad-euros').value;
+        var cantidadDolares = document.getElementById('cantidad-dolares').value;
+  
+        if (tipo === 'euros') {
+          var resultado = cantidadEuros * 1.20;
+          document.getElementById('cantidad-dolares').value = resultado;
+        } else {
+          var resultado = cantidadDolares / 1.20;
+          document.getElementById('cantidad-euros').value = resultado;
+        }
+      }
+    </script>
+  </body>
+</html>

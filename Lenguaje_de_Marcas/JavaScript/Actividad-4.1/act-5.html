@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Actividad 5</title>
+</head>
+<header>
+    <ul id="llista">
+      <li>Elemento 1</li>
+      <li>Elemento 2</li>
+      <li>Elemento 3</li>
+    </ul>
+  </header>
+  <button onclick="cambiarUL()">Mostrar lista</button>
+  
+  <style>
+  .mostrar {
+    position: relative;
+    top: 0;
+    color: red;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.5rem;
+  }
+  </style>
+  
+  <script>
+  function cambiarUL() {
+    var lista = document.getElementById("llista");
+    lista.className = "mostrar";
+  }
+  </script>
+
+
+</body>
+</html>

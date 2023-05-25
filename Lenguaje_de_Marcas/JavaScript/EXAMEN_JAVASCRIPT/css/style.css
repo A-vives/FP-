@@ -1,0 +1,12 @@
+a {
+    padding: 2px 5px;
+    background-color: #888;
+    color: white;
+    border-radius: 3px;
+    text-decoration: none;
+  }
+  div {
+    display: flex;
+    justify-content: center; 
+} 
+

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Actividad 6</title>
+</head>
+<header>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .ee img{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 150%;
+      height: 100%;
+    }
+    </style>
+    
+  </header>
+
+  <body>
+  <section class="ee">
+    <h1>Cambiaremos la imagen</h1>
+    <p>Si pasas el raton por encima veras otra imagen</p>
+    <img id="imatge" src="img1.png" onmouseover="canviar(this,'img2.png')" onmouseout="restaurar(this,'img1.png')"/>
+</section>
+  
+  <script>
+function canviar(imatge, nouSrc) {
+  imatge.setAttribute('src',nouSrc);
+}
+
+function restaurar(imatge, originalSrc) {
+  imatge.setAttribute('src',originalSrc);
+}
+  </script>
+
+
+</body>
+</html>

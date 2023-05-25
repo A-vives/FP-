@@ -1,0 +1,18 @@
+<html>
+<body>
+<h1>Fes clic i s'afegirà elements a una llista</h1>
+<button onclick="afegirtext()">Fes click</button>
+<ol id="llista">
+<li>Un element</li>
+<li>Un altre element</li>
+</ol>
+<script>
+function afegirtext() {
+var nodeElement = document.createElement("li"); // Crea un node element <li>
+var nodeText = document.createTextNode("Text d'un altre element"); // Crea un text node amb el seu text
+nodeElement.appendChild(nodeText); // Afegeix el node de text a l'element "li
+document.getElementById("llista").appendChild(nodeElement); // Afegim el node element amb el seu text al pare
+}
+</script>
+</body>
+</html>

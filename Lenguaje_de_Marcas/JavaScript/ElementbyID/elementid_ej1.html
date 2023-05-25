@@ -1,0 +1,34 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>h1 en vermell</title>
+</head>
+<body>
+<h1>Primer títol</h1>
+<h1>2Segon títol</h1>
+<h1>S3egon títol</h1>
+<h1>Se4gon títol</h1>
+<h1>Seg5on títol</h1>
+<h1>Sego6n títol</h1>
+<h1>Segon7 títol</h1>
+<h1>Segon 8títol</h1>
+<h1>Segon t9ítol</h1>
+<h1>Segon tí0tol</h1>
+<h1>Segon tít1ol</h1>
+<h1>Segon títo2l</h1>
+<h1>Segon títol3</h1>
+<h1>Segon títol4</h1>
+<h1>Segon títol5</h1>
+
+<script>
+var titol = document.getElementsByTagName("h1");
+/*
+Este For nos hace un bucle de titol.leght que es la cantidad de elementos con el tag h1
+que guarda en la variable titol de arriba 
+*/
+for (var i=0; i< titol.length; i++) {
+titol[i].style.backgroundColor = 'red'
+}
+</script>
+</body>
+</html>

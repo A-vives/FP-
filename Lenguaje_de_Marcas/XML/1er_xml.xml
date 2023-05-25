@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<liga>
+<equipos>
+<equipo nombre="barça" fundacion="1899" />
+<equipo nombre="madrid" fundacion="1950" />
+</equipos>
+<jugadores>
+<jugador nombre="Abdon">
+<dorsal>9</dorsal>
+<posicion>Delantero</posicion>
+</jugador>
+<jugador nombre="Messi">
+<dorsal>10</dorsal>
+<posicion>Delantero central</posicion>
+</jugador>
+</jugadores>
+<partidos>
+<partido>
+<fecha>01/01/2020</fecha>
+<local>betis</local>
+<visitante>Racing</visitante>
+<maracador>0-1</maracador>
+</partido>
+<partido>
+<fecha>01/02/2020</fecha>
+<local>Baleares</local>
+<visitante>Mallorca</visitante>
+<maracador>2-1</maracador>
+</partido>
+</partidos>
+<arbitros>
+<arbitro>
+<nombre>Negreira</nombre>
+<apellido>Corrupto</apellido>
+</arbitro>
+<arbitro>
+<nombre>Fernando</nombre>
+<apellido>Aguilar</apellido>
+</arbitro>
+</arbitros>
+</liga>

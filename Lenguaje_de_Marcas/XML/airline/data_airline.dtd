@@ -1,0 +1,32 @@
+<!ELEMENT airline_DB (airlines, passengers, airports)>
+<!ELEMENT airlines (airline+)>
+<!ELEMENT airline (airplanes*)>
+<!ATTLIST airline name CDATA #REQUIRED>
+
+<!ELEMENT airplanes (airplane+)>
+
+<!ELEMENT airplane (flight*)>
+<!ATTLIST airplane reg_num CDATA #REQUIRED>
+<!ATTLIST airplane model CDATA #REQUIRED>
+<!ATTLIST airplane capacity CDATA #REQUIRED>
+
+<!ELEMENT flight EMPTY>
+<!ATTLIST flight fl_num CDATA #REQUIRED>
+<!ATTLIST flight dep_airport CDATA #REQUIRED>
+<!ATTLIST flight dest_airport CDATA #REQUIRED>
+<!ATTLIST flight dep_date CDATA #REQUIRED>
+<!ATTLIST flight dest_date CDATA #REQUIRED>
+
+<!ELEMENT passengers (passenger+)>
+<!ELEMENT passenger (booking*)>
+<!ATTLIST passenger name CDATA #REQUIRED>
+<!ATTLIST passenger surname CDATA #REQUIRED>
+<!ATTLIST passenger email CDATA #REQUIRED>
+<!ATTLIST passenger seat NMTOKEN #REQUIRED>
+
+<!ELEMENT booking EMPTY>
+<!ATTLIST booking idflight CDATA #REQUIRED>
+<!ATTLIST booking seat NMTOKEN #REQUIRED>
+<!ELEMENT airports (airport*)>
+<!ELEMENT airport EMPTY>
+<!ATTLIST airport name CDATA #REQUIRED>

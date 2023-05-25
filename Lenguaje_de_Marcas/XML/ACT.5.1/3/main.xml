@@ -1,0 +1,19 @@
+<?xml version= "1.0" encoding= "uft-8"?>
+<!DOCTYPE libreria SYSTEM "data.dtd">
+<libreria>
+    <libro>
+        <titulo>Lenguaje de marcas</titulo>
+        <autor>Autor2</autor>
+        <autor>Autorl</autor>
+        <ISBN></ISBN>
+        <paginas>158</paginas>
+        <precio>15</precio>
+    </libro>
+    <libro>
+        <titulo>XML</titulo>
+        <autor>Autorl</autor>
+        <ISBN>94-567-345-6</ISBN>
+        <paginas>278</paginas>
+        <precio>30</precio>
+    </libro>
+</libreria>

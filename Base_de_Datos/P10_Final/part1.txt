@@ -1,0 +1,10 @@
+E:R:
+
+SALES (ID, datetime, ID_CUSTOMER, ID_WORKER)
+SALES_PRODUCTS(price, Qty, ID_SALE, ID_PRODUCT)
+PRODUCTS(ID, name, brand, model, price)
+CUSTOMERS(ID, name, surname, tlf_number, E-mail, address)
+ORDER_SERVICE(ID, datetime, description, ID_SERVICES, ID_WORKER)
+SERVICE_HAS(price, ID_ORDER_SERVICE, ID_SERVICES)
+SERVICES(ID, name, description, price)
+WORKER(ID, name, surname, tlf_number, date_up)

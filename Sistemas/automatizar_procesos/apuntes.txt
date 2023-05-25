@@ -1,0 +1,66 @@
+Para automatizar tareas
+    crontab -e (crear uno nuevo o ya se ha creado y queremos editarlo)
+            -d (borrar archivo creado)
+            -
+    ***** touch /home/nadal/prova.txt
+    ^
+    min (0-59)
+     ^
+     hora (0-23)
+      ^
+      dia del mes (1-31)
+       ^
+       mes (1-12)
+        ^
+        Dia semana (0-6 0=domingo)
+
+        si lo pongo dentro, cada minuto(por defecto) me hará un archivo prova.txt
+
+0 * * * * se ejecutará todas las horas en punto.
+0 0 * * * Todos los días se ejecutará el script una única vez
+0 0 * * 0 El script se ejecuta una vez a la semana
+0 0 1 * * Se ejecutará una vez al mes
+0 0 1 1 * El script se ejecutará una vez al año
+
+
+@reboot: Ejecuta una vez y nada más iniciarse el equipo.
+
+@yearly: ejecuta sólo una vez al año: 0 0 1 1 *
+
+@monthly: ejecuta una vez al mes y el primer día: 0 0 1 * *
+
+@weekly: todas las semanas, el primer minuto de la primera hora de la semana: 0 0 * * 0.
+
+@daily: todos los días a las 12 de la noche: 0 0 * * *
+
+@midnight: Tiene el mismo efecto que el anterior.
+
+@hourly: todas las horas durante su primer minuto: 0 * * * *
+
+EJERCICIO
+ 2 veces al dia 3 y 15
+1.  0 15 * * * sh /home/alejandro/Escritorio/p.sh
+    0 3 * * * sh /home/alejandro/Escritorio/p.sh
+
+    dia 25 a las 6:30
+    30 6 25 * * sh /home/alejandro/Escritorio/backup.sh
+    # bin/bash
+    sudo -pCurs202223 cp -r /etc /home/alejandro/Escritorio/bk_"`date`"
+
+
+    como programar cron en 30 seg
+        * * * * * sleep(30); sh
+        * * * * * sh 
+
+    Cada dia a las 5 de la mañana control de quotas
+
+        0 5 * * * sh /home/alejandro/Escritorio/reporte_quotas.sh
+        #bin/bash
+
+        sudo -pCurs202223 repquota /media/quota > report_quotes"`date`".txt
+
+
+
+sudo .pCurs20223 tar cvzf /home/alejandro /home/Escritorio/bk_tar_"`date`"
+
+sudo -Curs202223 tar cvzf /home/alejandro/Escritorio/bk_tar.tgz /home/alejandro

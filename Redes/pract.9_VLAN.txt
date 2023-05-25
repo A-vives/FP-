@@ -1,0 +1,12 @@
+switches capa3 4.3
+
+6.2
+
+Primero decidimos la estructura logica que vamos a tener:
+PC1: 192.168.10.10     FastEthernet0/1
+PC2: 192.168.20.10     FastEthernet0/2
+
+    SW1: FastEthernet0/1 - 192.168.10.1
+    SW1: FastEthernet0/2 - 192.168.20.1
+
+R1: GigabitEthernet 0/0/0 - 

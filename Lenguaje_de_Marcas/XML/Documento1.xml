@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE company SYSTEM "file:/C:/Users/Alejandro/GUITHUB_LOCAL/CLASE/Lenguaje_de_Marcas/XML/DTD1.dtd">
+<company>
+
+<clientes>
+
+    <cliente name="antonio" surname="00001" address="xxx" birthday="01-01-2002" >
+        <purchase/>
+    </cliente>
+
+</clientes>
+
+<supliers >
+    <suplier nif="3333" name="001" address="xxx">
+        <product code="1" name="silla" price="34"/>
+        <product code="2" name="lampara" price="50"/>
+    </suplier>
+</supliers>
+
+</company>

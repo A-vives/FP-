@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="raquetas.xsl"?>
+<TIENDA>
+  <RAQUETA>
+    <MARCA>BABOLAT</MARCA>
+    <MODELO> PURE DRIVE </MODELO>
+    <PRECIO>200</PRECIO>
+  </RAQUETA>
+  <RAQUETA>
+    <MARCA> YONEX </MARCA>
+    <MODELO> MTOUR 5 </MODELO>
+    <PRECIO>150</PRECIO>
+  </RAQUETA>
+  <RAQUETA>
+    <MARCA> WILSON </MARCA>
+    <MODELO> HAMMER </MODELO>
+    <PRECIO>1000</PRECIO>
+  </RAQUETA>
+</TIENDA>
+
+<fichas>
+  <persona id="14">
+  <nom>Tomas</nom>
+  </persona>
+ <persona id="23">
+  <nom nif="123456789-B">Pep</nom>
+  <vehicle>Seat</vehicle>
+  </persona>
+  <vehicle>Toyota</vehicle>
+</fichas>

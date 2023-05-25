@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:simpleType name="Edad">
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="0"/>
+      <xs:maxInclusive value="130"/>
+    </xs:restriction>
+  </xs:simpleType>
+<xs:simpleType name="TipoVehiculo">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="tren"/>
+      <xs:enumeration value="barco"/>
+      <xs:enumeration value ="bicicleta"/>
+      <xs:enumeration value ="coche"/>
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="dniT">
+  <xs:restriction base="xs:string">
+    <xs:length value="9" />
+    <xs:pattern value="([A-Z]|\d)[0-9][0-9][0-9][0-9][0-9][0-9][0-9][A-Z]" />
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="email">
+  <xs:restriction base="xs:string">
+  <xs:pattern value="([A-Za-z]+\.)*[A-Za-z]+@([A-Za-z]+\.)*[A-Za-z]+"></xs:pattern>
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:complexType name="auth">
+  <xs:choice>
+    <xs:element name="clave" type="clave"></xs:element>
+    <xs:element name="token" type="token"></xs:element>
+  </xs:choice>
+</xs:complexType>
+
+<xs:simpleType name="clave">
+  <xs:restriction base="xs:string">
+  <xs:pattern value="[a-zA-Z0-9\.,$#!]*"/> <!-- [^0-9] cualquier cosa menos un digito-->
+  <!-- Con el asterisco pueden ser mas de un digito-->
+  <xs:minLength value="8"/>
+  <xs:maxLength value="12"/>
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="token">
+  <xs:restriction base="xs:string">
+  <xs:pattern value="[a-zA-Z0-9\.,$#!]{8,12}"/> <!-- -->
+  </xs:restriction>
+</xs:simpleType>
+
+  <xs:element name="fichas">
+    <xs:complexType>
+      <xs:sequence>
+
+        <xs:element name="persona" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="nombre" type="xs:string"/>
+              <xs:element name="edad" type="Edad"/>
+              <xs:element name="dni" type="dniT"/>
+              <xs:element name="mail" type="email" minOccurs="0" maxOccurs="unbounded"/>
+              
+              <xs:element name="vehiculos">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="vehiculo" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:attribute name="tipo" type="TipoVehiculo" use="required"/>
+                        <xs:attribute name="matricula" type="xs:string"/>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+
+              <xs:element name="autenticacion" type="auth" maxOccurs="1"/>
+
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

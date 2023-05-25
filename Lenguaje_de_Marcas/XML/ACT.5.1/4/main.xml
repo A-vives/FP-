@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ticket SYSTEM "data.dtd">
+<ticket id="T001" >
+    <fecha>22-07-2022</fecha>
+    <precio_total moneda="EUR">
+        <precio_no_iva>
+         
+        </precio_no_iva>
+        <IVA_tot>
+        </IVA_tot>
+        <PVP_total>
+        </PVP_total>
+    </precio_total>
+    <pago>
+        <tarjeta tipo="" num="************1234">
+            <nombre>
+            Mariano
+            </nombre>
+        </tarjeta>
+    </pago>
+    <comercio>
+        <nombre_comercio>
+
+        </nombre_comercio>
+        <direccion>
+
+        </direccion>
+        <CIF>
+
+        </CIF>
+        <telefono>
+
+        </telefono>
+    </comercio>
+
+    <compra>
+        <nombre_compra>
+
+        </nombre_compra>
+        <cantidad>
+
+        </cantidad>
+        <precio_u_no_IVA>
+
+        </precio_u_no_IVA>
+        <IVA>
+
+        </IVA>
+        <PVP>
+
+        </PVP>
+    </compra>
+
+</ticket>

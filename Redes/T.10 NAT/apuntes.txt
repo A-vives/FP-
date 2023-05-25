@@ -1,0 +1,89 @@
+NAT = Traduccion de ip privada a publica
+    - Direccion local interna: Direccion de la fuente desde dentro de la red: (IPv4 privada)
+    - Direccion global interna (IPv4 Publica)
+    - Direccion local externa: Direccion de destino vista desde la red interna
+    - Direccion grobal externa: Direccion destino sesde la red externa (IPv4 pública)
+
+NAT Estatica
+Asignamos una ip publica a una ip privada 
+    ej: 192.168.1.1 - 201.255.1.20
+Necesitamos suficientes direcciones para satisfacer la cantidad total de sesiones de usuario simultaneas
+
+NAT Dinámica:
+Te dan una pool de ip publicas que cuando termina la conexion la deja sin uso para que otra conexion use esa misma ip
+
+NAT Extendido-sobrecatga (PAT)
+    Tengo una direccion publica y voy jugando con el puerto
+        Garantiza que usen un puerto TCP durefente para cada sesion
+
+En IPv4 Nos traduce de privadas a privadas
+En IPv6 Nos traduce a IPv4
+
+Tunneling
+traduccion 
+Dual stat
+
+NAT64
+
+ACL
+Depende donde se pone, externo o interno (se configura en el router):
+Lista sequencial de declaraciones que si se cumplen acepta el trafico
+Entrada de control de acceso
+Cuando el paquete entra en el router coge le paquete ip y las compara en las acl 
+    Si cumple estas condiciones aceptaremos o no el trafico
+
+ACL estandar: Solo filtran capa 3 usando SOLO IPv4 de ORIGEN
+
+ACL extendida: Filtra en capa 3 la direccion de destino y ORIGEN
+                Ademas de los puertos de la capa4 usando TCP ypuertos UDP
+
+Funcionamiento:
+    1- Cuando llega el paquete se extrae la ip de origen
+    2- Comienza desde la parte superior de la ACL Y compara con cada ACE en orden secuencial
+    3- Cuando hace una coincidencia el enrutador lleva a cabo una instruccion, el resto no se analiza
+    4- 
+
+Mascaras de comodin(wildcard):
+Mascara de 32-bit para determinar lo que va probar de coincidir
+    1-esta  
+    0-no esta
+**access-list 10 permit 192.168.1.0 0.0.0.255**
+ Ala inversa de la longitud de prefijos
+Se hace a la inversa, cuando se traduce a binario se puede ver mejor, 
+    Filtra el trafico en funcion de red
+192.168.1.1/24 - La wildcard seria:
+
+para Sustraer la wildcard haremos la inverda a la mascara 
+***preg examen** Donde vamos a colocar los ACL
+        ACL Extendidas - Deben ubicarse lo mas cerca posible del origen del origen del trafico que se desea filtrar
+        ACL estandar - Deben aplicarse lo mas cerca del destino del trafico que se desea filtrar
+
+            Hay dos maneras de implementarlas:
+                Si lo ponemos en la entrante, Serial 0/1/1, se puede aplicar para denegar el trafico entrante para todas las salientes, por eso no es buena idea, asi que se pondrá en la de G0/0/0
+            
+            En la extendida la pondremos lo mas lejos del receptor
+                Si lo ponemos en la S0/1/0: Lo podemos poner pero voy a procesar todo lo que salga del r1, ademas de los de todas las demas redes
+                    Lo mejor es ponerlo en la G0/0/1 Ya que solo se aplica a los que estan en la 11 se ponen en esta para no bloquear las entrantes de las demas redes
+                    
+tipos, donde ponerlos, en base a que filtran cada una de ellas
+
+EXAMEN
+20 PREGUNTAS TEST
+2 preguntas vlan teoria sobre, tres tecnicas para crearlas, 
+    router on stick pract 4, 
+    crear subinterfaces con conexion troncal de switch a router    
+    usar switch de capa 3 diferencias router one stick
+4 ptrguntas parte de redundancia
+    protocolo stp previene de bucles
+    etherchanel
+    redundancia a nivel de routers, que pasa cuando pasa a otro
+        First hop redundancy protocol routers virtuales uno activo y otro de respaldo
+6 tema 8
+
+8 preguntas tema 9 enrutamiento
+    enrutameinto estatico dinamico
+    protocolos SPF 
+    tabla de routing
+    proceso de enrutamiento como funciona
+
+    
