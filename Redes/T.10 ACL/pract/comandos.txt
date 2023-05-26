@@ -1,0 +1,59 @@
+ACL1
+    -name: 101
+    - Bloquear solo trafico FTP a Enterprise Web Server desde internet
+    - Permitir el acceso al trafico
+        Router# config t
+        Router(config)# access-list 101 permit tcp any host <dirección_IP_servidor_web> eq ftp
+        Router(config)# access-list 101 deny ip any any
+
+ACL2
+    - name: 111
+    - Ningun host de HQ LAN 1 acceder al servidor de sucursal
+    - Todo el trafico es permitido
+        Router(config)#access-list 111 deny ip <dirección_IP_rango_HQ_LAN1> <máscara_de_subred_HQ_LAN1> <dirección_IP_servidor_sucursal> <máscara_de_subred_servidor_sucursal>
+        Router(config)#access-list 111 permit ip any any
+ACL3
+    - Estandar nombre: vty_block
+    - solo direcciones de LAN 2 de HQ deben poder 
+            acceder a lineas VTY del router HQ
+ACL4
+    - Extendida nombre: branch_to_hq
+    - Ningun host de ninguna sucursal deberia acceder a la LAN 1 de HQ  
+        Instalar con una instruccion de lista de acceso para cada una de las LAN de las sucursales
+    - Todo otro tráfico debe ser permitido
+Verificar la operacion ACL
+   
+   Realice las siguientes pruebas de conectividad entre dispositivos de la topología. 
+   Tenga en cuenta si tienen éxito o no. 
+        Nota: Use el comando *** show ip access-lists *** para verificar la operación de ACL. 
+        Utilice el comando clear access list counters para restablecer los contadores de cruce.
+
+
+    Questions: 
+        Envíe una solicitud de ping desde Branch PC al Enterprise Web Server. ¿Tuvo éxito? Explique. 
+        Packet Tracer - Desafío de implementación de ACL IPv4 
+   
+
+    ¿Qué declaración ACL permitió o denegó el ping entre estos dos dispositivos? Enumere el nombre o 
+    número de la lista de acceso, el router en el que se aplicó y la línea específica con la que 
+    coincidió el tráfico. 
+
+    Intente hacer ping desde PC-1 en la LAN 1 de HQ al servidor de sucursal. ¿Tuvo éxito? Explique. 
+    ¿Qué declaración ACL permitió o denegó el ping entre estos dos dispositivos? 
+ 
+    Abra un explorador Web en el servidor externo e intente abrir una página Web almacenada en 
+    Enterprise Web Server. ¿Tuvo éxito? Explique. 
+
+    ¿Qué declaración ACL permitió o denegó el ping entre estos dos dispositivos? 
+        b. Probar conexiones a un servidor interno desde Internet. 
+
+    Preguntas: 
+        Desde la línea de comandos del PC de usuario de Internet, intente realizar una conexión FTP con el 
+        servidor de sucursales. ¿Se ha realizado correctamente la conexión FTP? 
+    
+        ¿Qué lista de acceso se debe modificar para evitar que los usuarios de Internet realicen conexiones FTP 
+        al servidor de sucursales? 
+
+        ¿Qué instrucciones se deben agregar a la lista de acceso para denegar este tráfico? 
+        Fin del documento 
+ 
