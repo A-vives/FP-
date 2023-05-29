@@ -1,5 +1,6 @@
 import xml.etree.ElementTree as ET
 import psycopg2
+import time
 def open_connection(
    phost="localhost",
    pdatabase="P-10-proyect",  # the database must be created
@@ -104,7 +105,9 @@ def create_tables():
   datetime DATE,
   description VARCHAR(150),
   ID_WORKER INT,
-  FOREIGN KEY (ID_WORKER) REFERENCES WORKER(ID)
+  ID_CUSTOMER INT,
+  FOREIGN KEY (ID_WORKER) REFERENCES WORKER(ID),
+  FOREIGN KEY (ID_CUSTOMER) REFERENCES CUSTOMERS(ID)
 )
        """,
        """
@@ -118,18 +121,21 @@ def create_tables():
        """]
    conn = open_connection()
    try:
+       count = 0
        cur = conn.cursor()
        # create table one by one
        for command in commands:
+           count +=1
            cur.execute(command)
-           print("TABLE CREATED")
+           print(f"TABLE nº{count} CREATED")
+           time.sleep(0.25)
        # close communication with the PostgreSQL database server
        cur.close()
        # commit the changes
        conn.commit()
    except (Exception, psycopg2.DatabaseError) as error:
        print(error)
-       print("CREATETABLE NOT SUCCESS!!!!")
+       print("CREATE TABLE NOT SUCCESS!!!!")
    finally:
        if conn is not None:
            close_connection(conn)

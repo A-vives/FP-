@@ -3,24 +3,73 @@ ACL1
     - Bloquear solo trafico FTP a Enterprise Web Server desde internet
     - Permitir el acceso al trafico
         Router# config t
-        Router(config)# access-list 101 permit tcp any host <dirección_IP_servidor_web> eq ftp
-        Router(config)# access-list 101 deny ip any any
+        (config)#access-list 101 deny tcp any host 192.168.1.70 eq ftp
+        (config)#access-list 101 deny icmp any 192.168.1.0 0.0.0.63
+        (config)#access-list 101 permit ip any any
+        (config)#interface Serial0/1/0
+        (config-if)#ip access-group 101 in
 
 ACL2
     - name: 111
     - Ningun host de HQ LAN 1 acceder al servidor de sucursal
     - Todo el trafico es permitido
-        Router(config)#access-list 111 deny ip <dirección_IP_rango_HQ_LAN1> <máscara_de_subred_HQ_LAN1> <dirección_IP_servidor_sucursal> <máscara_de_subred_servidor_sucursal>
-        Router(config)#access-list 111 permit ip any any
+(config)#access-list 111 deny ip any host 192.168.2.45
+(config)#access-list 111 permit ip any any
+(config)#interface GigabitEthernet0/0/0
+(config-if)#ip access-group 111 in
+        
 ACL3
     - Estandar nombre: vty_block
     - solo direcciones de LAN 2 de HQ deben poder 
             acceder a lineas VTY del router HQ
+(config)#ip access-list standard vty_block
+(config-std-nacl)#permit 192.168.1.64 0.0.0.7
+(config-std-nacl)#line vty 0 4
+(config-line)#access-class vty_block in
+
 ACL4
     - Extendida nombre: branch_to_hq
     - Ningun host de ninguna sucursal deberia acceder a la LAN 1 de HQ  
         Instalar con una instruccion de lista de acceso para cada una de las LAN de las sucursales
     - Todo otro tráfico debe ser permitido
+(config)#ip access-list extended branch_to_hq
+(config-ext-nacl)#deny ip 192.168.2.0 0.0.0.31 192.168.1.0 0.0.0.63
+(config-ext-nacl)#deny ip 192.168.2.32 0.0.0.15 192.168.1.0 0.0.0.63
+(config-ext-nacl)#permit ip any any
+(config-ext-nacl)#interface Serial0/1/1
+(config-if)#ip access-group branch_to_hq out
+
+------ COMANDOS ROUTER HQ ------
+
+enable
+conf t
+access-list 101 deny tcp any host 192.168.1.70 eq ftp
+access-list 101 deny icmp any 192.168.1.0 0.0.0.63
+access-list 101 permit ip any any
+ip access-list standard vty_block
+ permit 192.168.1.64 0.0.0.7
+access-list 111 deny ip any host 192.168.2.45
+access-list 111 permit ip any any
+interface GigabitEthernet0/0/0
+ ip access-group 111 in
+interface Serial0/1/0
+ ip access-group 101 in
+line vty 0 4
+ access-class vty_block in
+end
+
+----- COMANDOS ROUTER BRANCH ------
+
+enable
+conf t
+ip access-list extended branch_to_hq
+ deny ip 192.168.2.0 0.0.0.31 192.168.1.0 0.0.0.63
+ deny ip 192.168.2.32 0.0.0.15 192.168.1.0 0.0.0.63
+ permit ip any any
+interface Serial0/1/1
+ ip access-group branch_to_hq out
+end
+
 Verificar la operacion ACL
    
    Realice las siguientes pruebas de conectividad entre dispositivos de la topología. 

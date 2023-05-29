@@ -8,7 +8,8 @@ Para ver que ACL estan aplicadas en una interfaz
 
 Para crear una ACL se usa la siguiente sintaxis:
         ***Router(config)#
-    Router(config)# access-list access-list-number {deny | permit | remark text} source [source-wildcard] [log]
+    Router(config)# access-list access-list-number {deny | permit | remark text} 
+                    source [source-wildcard] [log]
     donde: 
         access-list-number
                 Este es el número decimal de la ACL.

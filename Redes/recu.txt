@@ -1,0 +1,6 @@
+2da
+    4-5 EXCEPTO IPV6
+    VLSM - VLAN
+3ra
+    IPv6 - t5
+    

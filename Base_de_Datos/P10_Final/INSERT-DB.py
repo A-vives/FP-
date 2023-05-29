@@ -1,6 +1,6 @@
 import xml.etree.ElementTree as ET
 import psycopg2
-
+import time
 
 def open_connection(
    phost="localhost",
@@ -117,20 +117,20 @@ INSERT INTO SALES_PRODUCTS (price, Qty, ID_SALE, ID_PRODUCT)
     
     
     """
-INSERT INTO ORDER_SERVICE (datetime, description, ID_WORKER)
+INSERT INTO ORDER_SERVICE (datetime, description, ID_WORKER, ID_CUSTOMER)
     VALUES
-    ('2023-05-20 10:00', 'Reparación de ordenador', 3),
-    ('2023-05-21 12:30', 'Instalación de software', 2),
-    ('2023-05-22 09:45', 'Reemplazo de disco duro', 1),
-    ('2023-05-23 14:15', 'Limpieza de virus', 4),
-    ('2023-05-24 11:30', 'Configuración de red', 2),
-    ('2023-05-25 13:45', 'Reparación de pantalla', 3),
-    ('2023-05-26 16:30', 'Actualización de sistema operativo', 1),
-    ('2023-05-27 10:45', 'Recuperación de datos', 4),
-    ('2023-05-28 09:00', 'Data Recovery', 2),
-    ('2023-05-29 14:30', 'Virus Removal', 3),
-    ('2023-05-30 11:15', 'Hardware Upgrade', 1),
-    ('2023-05-31 15:45', 'Network Setup', 4)
+    ('2023-05-20 10:00', 'Reparación de ordenador', 3, 1),
+    ('2023-05-21 12:30', 'Instalación de software', 2, 3),
+    ('2023-05-22 09:45', 'Reemplazo de disco duro', 1, 5),
+    ('2023-05-23 14:15', 'Limpieza de virus', 4, 1),
+    ('2023-05-24 11:30', 'Configuración de red', 2, 5),
+    ('2023-05-25 13:45', 'Reparación de pantalla', 3, 3),
+    ('2023-05-26 16:30', 'Actualización de sistema operativo', 1, 2),
+    ('2023-05-27 10:45', 'Recuperación de datos', 4, 5),
+    ('2023-05-28 09:00', 'Data Recovery', 2, 7),
+    ('2023-05-29 14:30', 'Virus Removal', 3, 1),
+    ('2023-05-30 11:15', 'Hardware Upgrade', 1, 3),
+    ('2023-05-31 15:45', 'Network Setup', 4, 5)
     """,
     """
 INSERT INTO SERVICE_HAS (price, ID_ORDER_SERVICE, ID_SERVICES)
@@ -151,11 +151,14 @@ INSERT INTO SERVICE_HAS (price, ID_ORDER_SERVICE, ID_SERVICES)
     ]
    conn = open_connection()
    try:
+       count = 0
        cur = conn.cursor()
        # create table one by one
        for command in commands:
+           count +=1
            cur.execute(command)
-           print("TABLE CREATED")
+           print(f"INSERT nº{count} SUCCESS")
+           time.sleep(0.25)
        # close communication with the PostgreSQL database server
        cur.close()
        # commit the changes
