@@ -15,8 +15,7 @@ Hojas de estilo de documentos XML
 Tecnicas de transformacion:
     con <xsl:for-each select="TIENDA/RAQUETA">
         seleccionaremos cada uno que sean hijos de TIENDA
-        
-    <xsl:value-of select="PRECIO"/>
+            <xsl:value-of select="PRECIO"/>
         El valor de select que coincida con PRECIO del for-each anterior
 
 IF
