@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="https://a.c-dn.net/b/3vl6ww/intlTelInput.css">
+        <title></title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <script>
+            function agregartxt2(){
+            var newt = document.createElement("div");
+            newt.style.cssText='border:8px solid #56aaf3;padding:12px;width:160px;margin:12px 0 12px 0;';                 
+            var t = document.createTextNode("Nuevo contenedor");       
+            newt.appendChild(t);                                         
+            document.getElementById("cont5").appendChild(newt); 
+            }                            
+            </script>
+            <button type="button" onclick="agregartxt2()">Escribir DIV</button><br>
+            <div id="cont5"></div>
+            <div class="dfx-widget  dfx-tradingViewWidget my-4 ">
+                <h2 class="dfx-widget__heading font-weight-bold h5">
+                Euro - Dollar Chart
+                </h2>
+                <div class="dfx-widget__content ">
+                <div id="tradingViewWidgetEURUSD" style="min-height: 400px"><div id="tradingview_62747-wrapper" style="position: relative;box-sizing: content-box;width: 100%;height: 400px;margin: 0 auto !important;padding: 0 !important;font-family: -apple-system, BlinkMacSystemFont, 'Trebuchet MS', Roboto, Ubuntu, sans-serif;"><div style="width: 100%;height: 400px;background: transparent;padding: 0 !important;">
+                                <iframe title="advanced chart TradingView widget" lang="en" id="tradingview_62747" src="https://s.tradingview.com/dailyfx/widgetembed/?frameElementId=tradingview_62747&amp;symbol=FX_IDC%3AEURUSD&amp;interval=D&amp;hidesidetoolbar=0&amp;symboledit=1&amp;saveimage=1&amp;studies=%5B%5D&amp;hideideas=1&amp;theme=Light&amp;timezone=exchange&amp;showpopupbutton=1&amp;studies_overrides=%7B%7D&amp;overrides=%7B%7D&amp;enabled_features=%5B%5D&amp;disabled_features=%5B%5D&amp;showpopupbutton=1&amp;locale=en&amp;utm_source=www.dailyfx.com&amp;utm_medium=widget&amp;utm_campaign=chart&amp;utm_term=FX_IDC%3AEURUSD#%7B%22page-uri%22%3A%22www.dailyfx.com%2Fcharts%22%7D" style="width: 100%; height: 100%; margin: 0 !important; padding: 0 !important;" frameborder="0" allowtransparency="true" scrolling="no" allowfullscreen="">
+                                </iframe>
+                            </div></div></div>
+                </div>
+                <div class="dfx-widget__footer">
+                <div class="py-2">
+                <a href="https://www.tradingview.com/symbols/EURUSD" target="_blank" rel="noopener" class="d-inline-flex py-1 text-dark dfx-font-size-2">
+                EUR/USD
+                chart by TradingView</a>
+                </div>
+                </div>
+                </div>
+    </body>
+</html>

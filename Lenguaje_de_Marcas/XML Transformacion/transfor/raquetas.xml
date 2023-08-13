@@ -17,14 +17,3 @@
     <PRECIO>1000</PRECIO>
   </RAQUETA>
 </TIENDA>
-
-<fichas>
-  <persona id="14">
-  <nom>Tomas</nom>
-  </persona>
- <persona id="23">
-  <nom nif="123456789-B">Pep</nom>
-  <vehicle>Seat</vehicle>
-  </persona>
-  <vehicle>Toyota</vehicle>
-</fichas>
